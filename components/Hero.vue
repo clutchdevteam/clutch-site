@@ -1,15 +1,39 @@
 <template>
-  <section>
-    <h1>{{ blok.hero_title }}</h1>
+  <section class="hero-container">
+    <div
+      class="
+        base-wrapper
+        relative
+        flex flex-col
+        space-y-16
+        justify-center
+        h-full
+        text-white
+      "
+    >
+      <AccentText>
+        <h1 class="relative inline font-monts text-5xl uppercase z-10">
+          {{ blok.hero_title }}
+        </h1>
+      </AccentText>
 
-    <p>{{ blok.hero_text }}</p>
+      <p class="font-fira text-lg">{{ blok.hero_text }}</p>
 
-    <button>{{ blok.hero_btn }}</button>
+      <div>
+        <button class="btn btn-red">
+          {{ blok.hero_btn }}
+        </button>
+      </div>
+    </div>
   </section>
 </template>
 
 <script>
+import AccentText from "./AccentText.vue";
 export default {
+  components: {
+    AccentText,
+  },
   props: {
     blok: {
       type: Object,
@@ -19,4 +43,10 @@ export default {
 };
 </script>
 
-<style lang="postcss" scoped></style>
+<style lang="postcss" scoped>
+.hero-container {
+  background: url(./assets/images/MobileBg.png) no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+</style>

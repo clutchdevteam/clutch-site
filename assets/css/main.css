@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap");
+
+@font-face {
+  font-family: billion;
+  src: url(../fonts/BillionDreams_PERSONAL.ttf);
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.base-wrapper {
+  @apply container mx-auto px-4;
+}
+
+.btn {
+  @apply font-fira font-bold
+  px-10
+  py-1
+  text-lg
+  tracking-wide
+  shadow-md
+  uppercase;
+}
+
+.btn-red {
+  @apply text-white
+  bg-red-500;
+}
