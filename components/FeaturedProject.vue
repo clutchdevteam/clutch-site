@@ -74,9 +74,9 @@ export default {
 
 <style lang="postcss" scoped>
 .featured-project-container {
-  background: url(./assets/images/angelMobileBg.png) no-repeat;
+  background: url(./assets/images/angelCaseStudyMobileBg.png) no-repeat;
   background-size: cover;
-  height: 80vh;
+  height: 90vh;
 }
 
 .clutch-blue-bg {
