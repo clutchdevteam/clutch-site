@@ -7,7 +7,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: "clutch-site",
+    title: "Clutch | Creative JAMstack Web Solutions",
     htmlAttrs: {
       lang: "en",
     },

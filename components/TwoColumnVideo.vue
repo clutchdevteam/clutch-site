@@ -1,36 +1,37 @@
 <template>
-  <section>
+  <section class="my-28 md:my-48">
     <div
       class="
         base-wrapper
         relative
         flex flex-col
+        md:grid
+        grid-cols-2
+        gap-12
         justify-center
         space-y-16
         mt-32
       "
     >
-      <div class="w-screen">
-        <div class="w-screen h-auto z-2">
-          <img
-            :src="blok.twoColumnVideo_video.filename"
-            :alt="blok.twoColumnVideo_alt"
-          />
-          <div class="clutch-blue-bg z-1">
-            <img
-              class="opacity-10 -mt-32 h-1/2"
-              :src="blok.twoColumnVideo_video.filename"
-              :alt="blok.twoColumnVideo_alt"
-            />
-          </div>
-        </div>
-      </div>
-      <div>
-        <FancyHeading>{{ blok.twoColumnVideo_title }}</FancyHeading>
-        <p class="font-fira">{{ blok.twoColumnVideo_title_description }}</p>
+      <div class="relative order-last">
+        <img
+          class="z-20 transform translate-x-4 md:translate-x-0"
+          :src="blok.twoColumnVideo_video.filename"
+          :alt="blok.twoColumnVideo_alt"
+        />
+        <div class="h-48 w-full clutch-blue-bg -mt-24 z-[-999]" />
       </div>
 
-      <p class="font-fira">{{ blok.twoColumnVideo_text }}</p>
+      <div class="order-first">
+        <div class="mb-4">
+          <FancyHeading>{{ blok.twoColumnVideo_title }}</FancyHeading>
+          <p class="font-fira">{{ blok.twoColumnVideo_title_description }}</p>
+        </div>
+
+        <p class="font-fira md:w-3/4 opacity-75">
+          {{ blok.twoColumnVideo_text }}
+        </p>
+      </div>
     </div>
   </section>
 </template>

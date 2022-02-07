@@ -1,54 +1,51 @@
 <template>
-  <section class="featured-project-container clutch-blue-bg">
+  <section class="featured-project-container clutch-blue-bg my-28 md:my-48">
     <div
       class="
         base-wrapper
+        h-full
         relative
         flex flex-col
+        md:grid
+        grid-cols-2
+        gap-12
         justify-center
-        space-y-16
+        items-center
+        space-y-12
         mt-32
+        pt-16
+        pb-8
+        mb-24
       "
     >
       <!-- <FancyHeading class="mt-20 text-white text-6xl">
         {{ blok.featuredProject_title }}
       </FancyHeading> -->
 
-      <AccentText
-        class="
-          relative
-          inline
-          mt-20
-          font-monts
-          text-5xl
-          uppercase
-          text-white
-          z-10
-        "
-      >
-        <h2>{{ blok.featuredProject_name }}</h2>
-      </AccentText>
+      <div class="md:order-last">
+        <AccentText class="font-monts text-5xl uppercase text-white">
+          <h2>{{ blok.featuredProject_name }}</h2>
+        </AccentText>
 
-      <p class="font-fira">{{ blok.featuredProject_text }}</p>
+        <p class="font-fira mt-8">{{ blok.featuredProject_text }}</p>
 
-      <div>
-        <button class="btn btn-red">
-          {{ blok.featuredProject_button }}
-        </button>
-      </div>
-      <div>
-        <img
-          class="w-80 h-auto float-left"
-          :src="blok.featuredProject_desktop_image.filename"
-          :alt="blok.featuredProject_desktop_image_alt"
-        />
+        <div class="mt-8">
+          <button class="btn btn-red">
+            {{ blok.featuredProject_button }}
+          </button>
+        </div>
       </div>
 
-      <div>
+      <div class="relative transform md:-translate-y-36">
         <img
-          class="h-56 w-auto float-right -mt-60"
+          class="w-2/5 md:w-1/3 absolute right-0 mt-12 md:mt-24"
           :src="blok.featuredProject_mobile_image.filename"
           :alt="blok.featuredProject_mobile_image_alt"
+        />
+        <img
+          class="w-3/4 md:w-11/12"
+          :src="blok.featuredProject_desktop_image.filename"
+          :alt="blok.featuredProject_desktop_image_alt"
         />
       </div>
     </div>
@@ -75,11 +72,18 @@ export default {
 <style lang="postcss" scoped>
 .featured-project-container {
   background: url(./assets/images/angelCaseStudyMobileBg.png) no-repeat;
+  background-position: right;
   background-size: cover;
-  height: 90vh;
+}
+
+@screen md {
+  .featured-project-container {
+    background: url(./assets/images/angelCaseStudyDesktopBg.png) no-repeat;
+  }
 }
 
 .clutch-blue-bg {
   background-color: #0095d4;
+  background-position: center;
 }
 </style>

@@ -49,4 +49,12 @@ export default {
   background-size: cover;
   height: 100vh;
 }
+@screen md {
+  .hero-container {
+    background: url(./assets/images/DesktopBG.png) no-repeat;
+    height: 100vh;
+    background-size: cover;
+    background-position: bottom;
+  }
+}
 </style>
