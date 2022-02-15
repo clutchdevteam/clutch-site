@@ -22,7 +22,7 @@
           <h2>{{ blok.featuredProject_name }}</h2>
         </AccentText>
 
-        <p class="font-fira mt-8">{{ blok.featuredProject_text }}</p>
+        <p class="font-fira mt-8 text-white">{{ blok.featuredProject_text }}</p>
 
         <div class="mt-8">
           <button class="btn btn-red">
