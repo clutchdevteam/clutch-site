@@ -1,7 +1,7 @@
 <template>
   <div>
     <Header />
-    <main>
+    <main class="overflow-x-hidden">
       <Nuxt />
     </main>
     <Footer />
@@ -11,11 +11,13 @@
 <script>
 import Header from "~/components/Header.vue";
 import Footer from "~/components/Footer.vue";
+import Page from "~/components/Page.vue";
 
 export default {
   components: {
     Header,
     Footer,
+    Page,
   },
 };
 </script>
