@@ -13,15 +13,10 @@
         items-center
         space-y-12
         mt-32
-        pt-16
-        pb-8
+        py-8
         mb-24
       "
     >
-      <!-- <FancyHeading class="mt-20 text-white text-6xl">
-        {{ blok.featuredProject_title }}
-      </FancyHeading> -->
-
       <div class="md:order-last">
         <AccentText class="font-monts text-5xl uppercase text-white">
           <h2>{{ blok.featuredProject_name }}</h2>

@@ -1,13 +1,24 @@
 <template>
-  <h2 class="text-gradient flex items-center font-billion text-5xl md:text-7xl">
-    <span class="text-xl md:text-2xl">&lt;</span>
+  <h2
+    :class="`${
+      !noGradient ? 'text-gradient' : 'text-white'
+    } flex items-center font-billion text-6xl md:text-8xl`"
+  >
+    <span class="text-xl md:text-3xl">&lt;</span>
     <slot />
-    <span class="text-xl md:text-2xl">&nbsp;/&gt;</span>
+    <span class="text-xl md:text-3xl">&nbsp;/&gt;</span>
   </h2>
 </template>
 
 <script>
-export default {};
+export default {
+  props: {
+    noGradient: {
+      type: Boolean,
+      default: false,
+    },
+  },
+};
 </script>
 
 <style lang="postcss" scoped>
