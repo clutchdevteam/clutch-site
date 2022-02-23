@@ -48,8 +48,9 @@
 </template>
 
 <script>
-import FancyHeading from "./FancyHeading.vue";
-import AccentText from "./AccentText.vue";
+import FancyHeading from './FancyHeading.vue';
+import AccentText from './AccentText.vue';
+
 export default {
   components: {
     FancyHeading,
@@ -66,6 +67,8 @@ export default {
 
 <style lang="postcss" scoped>
 .featured-project-container {
+  @apply bg-primary;
+
   background: url(./assets/images/angelCaseStudyMobileBg.png) no-repeat;
   background-position: right;
   background-size: cover;

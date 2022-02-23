@@ -10,6 +10,7 @@ module.exports = {
         red: {
           500: "#C80000",
         },
+        primary: "#0095d4",
       },
     },
   },

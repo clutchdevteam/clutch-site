@@ -13,7 +13,7 @@
             hidden
             md:block
             absolute
-            clutch-blue-bg
+            bg-primary
             top-0
             transform
             -translate-x-24
