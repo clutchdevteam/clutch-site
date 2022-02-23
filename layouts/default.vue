@@ -18,6 +18,7 @@ import { mapState } from 'vuex';
 export default {
   computed: {
     ...mapState('global', ['pageHasModalOpen', 'isMobileMenuOpen', 'mainNav', 'logo']),
+
     hasOpenMenu() {
       return this.pageHasModalOpen || this.isMobileMenuOpen;
     },

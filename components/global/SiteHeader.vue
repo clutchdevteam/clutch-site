@@ -1,7 +1,9 @@
 <template>
   <header class="z-50 absolute w-full flex items-center justify-between p-4">
     <div>
-      <img v-if="logo" class="w-24 lg:w-48" :src="logo.filename" :alt="logo.alt" />
+      <nuxt-link to="/">
+        <img v-if="loaded" class="w-24 lg:w-48" :src="logo.filename" :alt="logo.alt" />
+      </nuxt-link>
     </div>
 
     <nav class="hidden lg:block text-white font-fira">
@@ -9,13 +11,10 @@
         <li v-for="menu in nav" :key="menu.id">
           <BaseMenu
             :id="menu.title"
-            classes="w-32 xl:w-40 text-center py-2 border-t-2 border-transparent hover:border-red-500"
+            classes="px-4 text-center py-2 border-t-2 border-transparent hover:border-red-500"
             :menu="menu"
             :depth="0"
           />
-        </li>
-        <li>
-          <nuxt-link class="bg-red-500 px-3 py-1 ml-8" to="contact-us">Let's Chat</nuxt-link>
         </li>
       </ul>
     </nav>
@@ -126,6 +125,7 @@ export default {
     logo: {
       type: Object,
       required: true,
+      default: () => {},
     },
     contact: {
       type: Array,
@@ -133,7 +133,7 @@ export default {
     },
   },
   computed: {
-    ...mapState('global', ['isMobileMenuOpen', 'pageHasModalOpen']),
+    ...mapState('global', ['isMobileMenuOpen', 'pageHasModalOpen', 'loaded']),
     isHomePage() {
       return this.$route.fullPath === '/';
     },
@@ -152,7 +152,6 @@ export default {
       this.$refs.closeButtonRef?.focus();
     },
     async closeMenu(e) {
-      console.log(e);
       await this.$store.commit('global/isMobileMenuOpen', false);
       await this.$nextTick();
       await this.$nextTick();

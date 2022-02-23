@@ -1,6 +1,6 @@
 <template>
   <section class="base-wrapper relative overflow-hidden pb-32 mt-40">
-    <img class="absolute right-0" src="~/assets/images/pre-footerBG.png" />
+    <!-- <img class="absolute right-0" src="~/assets/images/pre-footerBG.png" />
 
     <div class="container mx-auto z-20">
       <h2 class="flex items-center font-billion">
@@ -14,7 +14,7 @@
           ctaButton.text
         }}</nuxt-link>
       </div>
-    </div>
+    </div> -->
   </section>
 </template>
 

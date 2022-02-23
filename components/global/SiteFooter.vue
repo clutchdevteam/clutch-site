@@ -1,9 +1,13 @@
 <template>
-  <footer class="bg-primary py-24 border-t-4 border-red-500">
+  <footer class="bg-primary py-24">
     <div
       class="base-wrapper container mx-auto flex flex-col lg:flex-row justify-between items-center"
     >
-      <img v-if="logo" class="w-48 mb-12" :src="logo.filename" :alt="logo.alt" />
+      <img
+        class="w-48 mb-12"
+        src="~/assets/images/clutchLogo.svg"
+        alt="The word Clutch in a cursive typeface between an opening and closing angle bracket."
+      />
 
       <nav>
         <ul class="flex items-center space-x-12 text-white font-fira">
@@ -20,6 +24,8 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
+
 export default {
   props: {
     logo: {
@@ -31,7 +37,8 @@ export default {
       required: true,
     },
   },
+  computed: {
+    ...mapState('global', ['loaded']),
+  },
 };
 </script>
-
-<style lang="scss" scoped></style>

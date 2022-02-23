@@ -3,7 +3,7 @@ export const state = () => ({
   isMobileMenuOpen: false,
   pageHasModalOpen: false,
   mainNav: [],
-  logo: null,
+  logo: {},
 });
 
 export const mutations = {
