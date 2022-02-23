@@ -50,10 +50,7 @@ export default {
               )
               .then((res) => {
                 Object.keys(res.data.links).forEach((key) => {
-                  if (
-                    !ignoreFiles.includes(res.data.links[key].slug) &&
-                    !ignoreFolders.includes(res.data.links[key].slug.split('/')[0])
-                  ) {
+                  if (!ignoreFiles.includes(res.data.links[key].slug)) {
                     if (!(res.data.links[key].is_folder && !res.data.links[key].is_startpage)) {
                       routes.push('/' + res.data.links[key].slug);
                     }
@@ -65,7 +62,7 @@ export default {
           });
       };
 
-      getRoutes(ignoreFiles, ignoreFolders);
+      getRoutes(ignoreFiles);
 
       return routes;
     },
