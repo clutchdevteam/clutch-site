@@ -32,9 +32,7 @@ export default {
       const version = isPreview ? 'draft' : 'published';
       let cacheVersion = 0;
       // ignore these files and folders
-      const ignoreFiles = ['home', 'global', 'sitefooter'];
-      // update to remove docs after docs build!
-      const ignoreFolders = ['authors', 'companies', 'releases'];
+      const ignoreFiles = ['home', 'global'];
 
       const routes = ['/'];
 
@@ -56,11 +54,6 @@ export default {
                     !ignoreFiles.includes(res.data.links[key].slug) &&
                     !ignoreFolders.includes(res.data.links[key].slug.split('/')[0])
                   ) {
-                    /*
-                     * This block isn't pretty but it prevents attempts
-                     * to generate the index.html file of folders that don't
-                     * have root files in Storyblok. (No index.html.)
-                     */
                     if (!(res.data.links[key].is_folder && !res.data.links[key].is_startpage)) {
                       routes.push('/' + res.data.links[key].slug);
                     }
