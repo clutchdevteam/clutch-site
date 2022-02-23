@@ -8,6 +8,7 @@ export default {
 
   env: {
     STORYBLOK_API_KEY: process.env.STORYBLOK_API_KEY,
+    NODE_ENV: process.env.NODE_ENV,
   },
 
   // Global page headers: https://go.nuxtjs.dev/config-head
