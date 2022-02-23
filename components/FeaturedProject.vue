@@ -18,7 +18,7 @@
       "
     >
       <div class="md:order-last">
-        <AccentText class="font-monts text-5xl uppercase text-white">
+        <AccentText class="font-monts font-bold text-5xl uppercase text-white">
           <h2>{{ blok.featuredProject_name }}</h2>
         </AccentText>
 

@@ -1,18 +1,6 @@
 <template>
   <section class="my-28 md:my-48">
-    <div
-      class="
-        base-wrapper
-        container
-        mx-auto
-        relative
-        flex flex-col
-        md:flex-row
-        space-y-16
-        md:space-x-12
-        justify-center
-      "
-    >
+    <div class="relative flex flex-col md:flex-row space-y-16 md:space-x-12 justify-center">
       <div class="md:w-1/2">
         <img
           class="-mt-12 md:mt-0 w-full"
@@ -21,12 +9,10 @@
         />
       </div>
 
-      <div class="flex flex-col md:w-1/2 md:mt-12">
-        <FancyHeading class="mb-8">{{
-          blok.twoColumnImage_title
-        }}</FancyHeading>
+      <div class="flex flex-col md:w-1/2 md:mt-12 px-4 md:p-0">
+        <FancyHeading class="mb-8">{{ blok.twoColumnImage_title }}</FancyHeading>
 
-        <p class="font-fira opacity-75 md:w-3/4">
+        <p class="font-fira opacity-75 max-w-xl md:pl-24">
           {{ blok.twoColumnImage_text }}
         </p>
       </div>
@@ -35,7 +21,7 @@
 </template>
 
 <script>
-import FancyHeading from "./FancyHeading.vue";
+import FancyHeading from './FancyHeading.vue';
 export default {
   components: {
     FancyHeading,

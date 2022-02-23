@@ -1,7 +1,7 @@
 <template>
   <section class="my-28 md:my-48 pb-12 md:pb-32">
-    <div class="base-wrapper md:grid grid-cols-2 gap-12 items-center">
-      <div class="relative order-last mb-12 md:mb-0">
+    <div class="md:grid grid-cols-2 gap-12 items-center">
+      <div class="relative order-last mb-12 md:mb-0 pl-12 md:pl-0">
         <img
           class="block z-10"
           :src="blok.twoColumnVideo_video.filename"
@@ -10,14 +10,13 @@
 
         <div
           class="
-            hidden
-            md:block
             absolute
             bg-primary
             top-0
             transform
-            -translate-x-24
-            translate-y-24
+            -translate-x-12
+            translate-y-12
+            md:-translate-x-24 md:translate-y-24
           "
           style="z-index: -999"
         >
@@ -29,7 +28,7 @@
         </div>
       </div>
 
-      <div class="order-first">
+      <div class="order-first mt-24 md:mt-0 p-4 md:p-0">
         <div class="mb-4">
           <FancyHeading>{{ blok.twoColumnVideo_title }}</FancyHeading>
           <p class="text-sm font-fira">
@@ -46,7 +45,7 @@
 </template>
 
 <script>
-import FancyHeading from "./FancyHeading.vue";
+import FancyHeading from './FancyHeading.vue';
 export default {
   components: {
     FancyHeading,
@@ -63,5 +62,17 @@ export default {
 <style lang="postcss" scoped>
 .clutch-blue-bg {
   background-color: #0095d4;
+}
+
+@screen md {
+  section {
+    margin-left: 10%;
+  }
+}
+
+@screen lg {
+  section {
+    margin-left: 15%;
+  }
 }
 </style>
