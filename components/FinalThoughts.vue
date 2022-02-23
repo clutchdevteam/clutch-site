@@ -9,7 +9,7 @@
       </h2>
 
       <div class="lg:w-1/2 mx-auto">
-        <p class="text-lg mb-12">{{ blok.text }}</p>
+        <p class="text-lg mb-12 leading-loose">{{ blok.text }}</p>
         <nuxt-link class="btn btn-red" :to="ctaButton.link.cached_url">{{
           ctaButton.text
         }}</nuxt-link>
