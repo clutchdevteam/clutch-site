@@ -18,7 +18,7 @@
         </li>
       </ul>
 
-      <nuxt-link to="/" class="ml-4 bg-red-500 px-4 py-1 hover:bg-red-800">Let's Chat</nuxt-link>
+      <nuxt-link to="/" class="ml-4 btn btn-red">Let's Chat</nuxt-link>
     </nav>
 
     <div class="mobile lg:hidden text-white">

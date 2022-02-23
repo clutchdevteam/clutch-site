@@ -16,16 +16,18 @@ body {
 }
 
 .btn {
-  @apply font-fira font-bold
+  @apply font-fira 
   px-10
   py-1
-  text-lg
   tracking-wide
-  shadow-md
-  uppercase;
+  shadow-md transition duration-150 ease-in-out border-b-2 border-transparent;
 }
 
 .btn-red {
   @apply text-white
   bg-red-500;
+}
+
+.btn-red:hover {
+  @apply border-white;
 }
