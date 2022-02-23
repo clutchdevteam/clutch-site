@@ -1,6 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
 
-@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap');
 
 @font-face {
   font-family: billion;
@@ -28,4 +28,10 @@ body {
 .btn-red {
   @apply text-white
   bg-red-500;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 700;
 }
