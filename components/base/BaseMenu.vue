@@ -6,8 +6,8 @@
 
     <nuxt-link
       :class="`${classes} block`"
-      v-else
-      :id="menu.label.toLowerCase().replace(' ', '-')"
+      v-show="!menu.submenus"
+      :id="menuID"
       :to="menu.link.cached_url"
     >
       {{ menu.label }}
@@ -29,6 +29,11 @@ export default {
     classes: {
       type: String,
       default: '',
+    },
+  },
+  computed: {
+    menuID() {
+      return this.menu.label.toLowerCase().replace(/\s+/g, '-');
     },
   },
 };

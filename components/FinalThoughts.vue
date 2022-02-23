@@ -5,7 +5,7 @@
     <div class="container mx-auto z-20">
       <h2 class="flex items-center font-billion">
         <span class="text-3xl lg:text-5xl">&lt;</span>{{ blok.title }}
-        <span class="text-3xl lg:text-5xl">&nbsp;/&gt;</span>
+        <span class="text-3xl lg:text-5xl">&#47;&gt;</span>
       </h2>
 
       <div class="lg:w-1/2 mx-auto">

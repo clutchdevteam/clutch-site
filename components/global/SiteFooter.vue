@@ -27,7 +27,7 @@ export default {
       required: true,
     },
     nav: {
-      type: Object,
+      type: Array,
       required: true,
     },
   },
