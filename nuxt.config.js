@@ -36,7 +36,7 @@ export default {
 
       const routes = ['/'];
 
-      const getRoutes = async (ignoreFiles, ignoreFolders) => {
+      const getRoutes = async (ignoreFiles) => {
         axios
           .get(`https://api.storyblok.com/v1/cdn/spaces/me?token=${token}`)
           /* eslint-disable-next-line camelcase */
