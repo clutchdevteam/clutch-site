@@ -1,23 +1,32 @@
 <template>
-  <div>
-    <Header />
+  <div :class="{ 'h-screen overflow-hidden': isMobileMenuOpen }">
+    <SiteHeader :nav="mainNav" :logo="logo" />
+
     <main>
       <Nuxt />
     </main>
-    <Footer />
+
+    <SiteFooter :nav="mainNav" :logo="logo" />
+
+    <PortalTarget name="mobile-menu"></PortalTarget>
   </div>
 </template>
 
 <script>
-import Header from '~/components/Header.vue';
-import Footer from '~/components/Footer.vue';
-import Page from '~/components/Page.vue';
+import { mapState } from 'vuex';
 
 export default {
-  components: {
-    Header,
-    Footer,
-    Page,
+  computed: {
+    ...mapState('global', ['pageHasModalOpen', 'isMobileMenuOpen', 'mainNav', 'logo']),
+    hasOpenMenu() {
+      return this.pageHasModalOpen || this.isMobileMenuOpen;
+    },
+    isHomePage() {
+      return this.$route.fullPath === '/';
+    },
+    lockScroll() {
+      return this.pageHasModalOpen || this.isMobileMenuOpen;
+    },
   },
 };
 </script>

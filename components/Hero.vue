@@ -1,20 +1,8 @@
 <template>
   <section class="hero-container">
-    <div
-      class="
-        base-wrapper
-        relative
-        flex flex-col
-        space-y-16
-        justify-center
-        h-full
-        text-white
-      "
-    >
-      <AccentText class="md:w-1/2">
-        <h1
-          class="relative inline font-monts text-5xl md:text-8xl uppercase z-10"
-        >
+    <div class="base-wrapper relative flex flex-col space-y-16 justify-center h-full text-white">
+      <AccentText class="md:w-1/2 lg:mt-10">
+        <h1 class="relative inline font-monts text-5xl md:text-8xl uppercase">
           {{ blok.hero_title }}
         </h1>
       </AccentText>
@@ -31,7 +19,7 @@
 </template>
 
 <script>
-import AccentText from "./AccentText.vue";
+import AccentText from './AccentText.vue';
 export default {
   components: {
     AccentText,
