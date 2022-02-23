@@ -9,10 +9,10 @@
         />
       </div>
 
-      <div class="flex flex-col md:w-1/2 md:mt-12 px-4 md:p-0">
-        <FancyHeading class="mb-8">{{ blok.twoColumnImage_title }}</FancyHeading>
+      <div class="md:w-1/2 md:mt-12 px-4 md:p-0">
+        <FancyHeading class="block mb-8">{{ blok.twoColumnImage_title }}</FancyHeading>
 
-        <p class="font-fira opacity-75 max-w-xl md:pl-24">
+        <p class="font-fira opacity-75 lg:max-w-xl md:pl-24">
           {{ blok.twoColumnImage_text }}
         </p>
       </div>

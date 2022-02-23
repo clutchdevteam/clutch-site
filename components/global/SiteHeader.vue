@@ -6,7 +6,7 @@
       </nuxt-link>
     </div>
 
-    <nav class="hidden lg:block text-white font-fira">
+    <nav class="hidden lg:flex text-white font-fira items-center">
       <ul class="flex items-center">
         <li v-for="menu in nav" :key="menu.id">
           <BaseMenu
@@ -17,6 +17,8 @@
           />
         </li>
       </ul>
+
+      <nuxt-link to="/" class="ml-4 bg-red-500 px-4 py-1 hover:bg-red-800">Let's Chat</nuxt-link>
     </nav>
 
     <div class="mobile lg:hidden text-white">

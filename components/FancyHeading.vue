@@ -2,11 +2,9 @@
   <h2
     :class="`${
       !noGradient ? 'text-gradient' : 'text-white'
-    } flex items-center font-billion text-6xl md:text-8xl`"
+    } flex items-center font-billion text-6xl md:text-8xl px-4`"
   >
-    <span class="text-xl md:text-3xl">&lt;</span>
     <slot />
-    <span class="text-xl md:text-3xl">&nbsp;/&gt;</span>
   </h2>
 </template>
 
@@ -23,8 +21,18 @@ export default {
 
 <style lang="postcss" scoped>
 .text-gradient {
-  background: linear-gradient(to right, #c80000, #0095d4, #0095d4);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #0094ff;
+  display: inline-block;
+}
+
+@supports ((background-clip: text) or (-webkit-background-clip: text)) and
+  ((text-fill-color: transparent) or (-webkit-text-fill-color: transparent)) {
+  .text-gradient {
+    background-image: linear-gradient(to right, #d00000, #0094ff);
+    background-size: cover;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 }
 </style>
