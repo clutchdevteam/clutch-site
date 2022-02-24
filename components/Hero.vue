@@ -47,4 +47,10 @@ export default {
     background-position: bottom;
   }
 }
+
+@screen xl {
+  .hero-container {
+    background-position: center;
+  }
+}
 </style>

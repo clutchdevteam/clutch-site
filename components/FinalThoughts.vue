@@ -1,11 +1,9 @@
 <template>
-  <section class="base-wrapper relative overflow-hidden pb-32 mt-40">
-    <img class="absolute right-0" src="~/assets/images/pre-footerBG.png" />
-
+  <section class="base-wrapper relative overflow-hidden mt-48">
     <div class="container mx-auto z-20">
       <h2 class="text-gradient font-billion px-4">{{ blok.title }}</h2>
 
-      <div class="lg:w-1/2 mx-auto">
+      <div class="lg:w-1/2 mx-auto pb-32">
         <p class="text-lg mb-12 leading-loose opacity-75">{{ blok.text }}</p>
         <nuxt-link class="btn btn-red" :to="ctaButton.link.cached_url">{{
           ctaButton.text
@@ -48,6 +46,12 @@ export default {
   }
 }
 
+section {
+  background-image: url('~/assets/images/pre-footerBG.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 h2 {
   font-size: 128px;
 }
@@ -58,6 +62,11 @@ img {
 @screen md {
   h2 {
     font-size: 240px;
+  }
+
+  section {
+    background-size: contain;
+    background-position-x: right;
   }
 }
 
