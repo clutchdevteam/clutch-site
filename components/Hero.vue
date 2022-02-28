@@ -38,7 +38,7 @@ export default {
 
 <style lang="postcss" scoped>
 section {
-  background: url(./assets/images/DesktopBg.png) no-repeat;
+  background: url(~/assets/images/DesktopBg.png) no-repeat;
   background-size: cover;
   background-position-x: left;
 }
