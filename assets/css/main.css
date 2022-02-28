@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;700&display=swap');
 
 body {
-  overflow-x: hidden;
+  @apply overflow-x-hidden text-black;
 }
 
 .base-wrapper {

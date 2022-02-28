@@ -1,5 +1,5 @@
 <template>
-  <nuxt-link class="btn" v-if="href" :to="href">
+  <nuxt-link class="btn inline-block" v-if="href" :to="href">
     <span>
       <slot />
     </span>
@@ -29,10 +29,10 @@ export default {
 
 <style lang="postcss" scoped>
 .btn {
-  @apply relative font-body uppercase px-8 transition duration-150 ease-in-out;
+  @apply font-body uppercase px-8 transition duration-150 ease-in-out;
 
   background: linear-gradient(#fff, #fff) padding-box,
-    linear-gradient(120deg, #d00000, #0094ff) border-box;
+    linear-gradient(120deg, #d00000, #0075ff) border-box;
   border: 2px solid transparent;
 
   & span {
@@ -44,7 +44,7 @@ export default {
     @apply shadow;
 
     background: linear-gradient(#fff, #fff) padding-box,
-      linear-gradient(120deg, #0094ff, #d00000) border-box;
+      linear-gradient(120deg, #0075ff, #d00000) border-box;
   }
 }
 </style>

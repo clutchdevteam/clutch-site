@@ -1,18 +1,21 @@
 <template>
-  <section class="hero-container">
-    <div class="base-wrapper relative flex flex-col space-y-16 justify-center h-full text-white">
-      <AccentText class="md:w-1/2 lg:mt-10">
-        <h1 class="relative inline font-monts text-5xl md:text-8xl uppercase font-bold">
-          {{ blok.hero_title }}
-        </h1>
-      </AccentText>
+  <section class="h-screen">
+    <div class="base-wrapper h-full">
+      <div class="flex flex-col justify-center md:w-1/2 h-full space-y-12">
+        <div>
+          <BaseText class="uppercase">{{ blok.kicker }}</BaseText>
+          <FancyHeading class="text-3xl lg:text-8xl pb-2">
+            <span v-html="blok.title" />
+          </FancyHeading>
+        </div>
 
-      <BaseText class="text-lg md:w-1/2">{{ blok.hero_text }}</BaseText>
+        <BaseText class="text-lg opacity-75 lg:w-3/4">{{ blok.text }}</BaseText>
 
-      <div>
-        <button class="btn btn-red">
-          {{ blok.hero_btn }}
-        </button>
+        <div>
+          <BaseButton :href="blok.button[0].link.cached_url">
+            {{ blok.button[0].text }}
+          </BaseButton>
+        </div>
       </div>
     </div>
   </section>
@@ -34,23 +37,16 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
-.hero-container {
-  background: url(./assets/images/MobileBg.png) no-repeat;
+section {
+  background: url(./assets/images/DesktopBg.png) no-repeat;
   background-size: cover;
-  height: 100vh;
-}
-@screen md {
-  .hero-container {
-    background: url(./assets/images/DesktopBG.png) no-repeat;
-    height: 100vh;
-    background-size: cover;
-    background-position: bottom;
-  }
+  background-position-x: left;
 }
 
-@screen xl {
-  .hero-container {
-    background-position: center;
+@screen md {
+  section {
+    background-size: contain;
+    background-position-x: right;
   }
 }
 </style>

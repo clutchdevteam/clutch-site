@@ -6,7 +6,7 @@
       </nuxt-link>
     </div>
 
-    <nav class="hidden lg:flex text-white font-body items-center">
+    <nav class="hidden lg:flex font-body items-center">
       <ul class="flex items-center">
         <li v-for="menu in nav" :key="menu.id">
           <BaseMenu
@@ -18,12 +18,12 @@
         </li>
       </ul>
 
-      <nuxt-link to="/" class="ml-4 btn btn-red">Let's Chat</nuxt-link>
+      <BaseButton href="/contact" class="ml-4">Hire us</BaseButton>
     </nav>
 
-    <div class="mobile lg:hidden text-white">
+    <div class="mobile lg:hidden">
       <button
-        :class="`p-4 ${isHomePage ? 'text-white' : ''}`"
+        :class="`p-4 ${isHomePage ? '' : ''}`"
         ref="openButtonRef"
         @click="openMobileMenu"
         type="button"

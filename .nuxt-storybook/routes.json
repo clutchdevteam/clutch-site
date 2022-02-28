@@ -3,6 +3,7 @@
     "name": "all",
     "path": "/*",
     "component": "/Users/drewclements/Desktop/clutch/clutch-site/pages/_.vue",
-    "chunkName": "pages/_"
+    "chunkName": "pages/_",
+    "_name": "_0f65432b"
   }
 ]
