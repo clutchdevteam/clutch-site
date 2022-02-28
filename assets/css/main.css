@@ -9,20 +9,3 @@ body {
 .base-wrapper {
   @apply container mx-auto px-4;
 }
-
-.btn {
-  @apply font-body 
-  px-10
-  py-1
-  tracking-wide
-  shadow-md transition duration-150 ease-in-out border-b-2 border-transparent;
-}
-
-.btn-red {
-  @apply text-white
-  bg-red-500;
-}
-
-.btn-red:hover {
-  @apply border-white;
-}

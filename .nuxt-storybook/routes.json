@@ -1,0 +1,8 @@
+[
+  {
+    "name": "all",
+    "path": "/*",
+    "component": "/Users/drewclements/Desktop/clutch/clutch-site/pages/_.vue",
+    "chunkName": "pages/_"
+  }
+]
