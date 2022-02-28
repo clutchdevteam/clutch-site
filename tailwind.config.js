@@ -2,8 +2,7 @@ module.exports = {
   theme: {
     fontFamily: {
       monts: ['Montserrat', 'Arial', 'sans-serif'],
-      fira: ['Fira Code', 'Arial', 'sans-serif'],
-      billion: ['billion', 'Courier', 'monospace'],
+      body: ['Josefin Sans', 'Arial', 'sans-serif'],
     },
     extend: {
       colors: {

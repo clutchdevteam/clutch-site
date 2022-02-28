@@ -1,28 +1,16 @@
 <template>
   <section class="featured-project-container clutch-blue-bg my-28 md:my-48">
     <div
-      class="
-        base-wrapper
-        h-full
-        relative
-        flex flex-col
-        md:grid
-        grid-cols-2
-        gap-12
-        justify-center
-        items-center
-        space-y-12
-        mt-32
-        py-8
-        mb-24
-      "
+      class="base-wrapper h-full relative flex flex-col md:grid grid-cols-2 gap-12 justify-center items-center space-y-12 mt-32 py-8 mb-24"
     >
       <div class="md:order-last">
         <AccentText class="font-monts font-bold text-5xl uppercase text-white">
           <h2 class="font-bold">{{ blok.featuredProject_name }}</h2>
         </AccentText>
 
-        <p class="font-fira mt-8 text-white max-w-xl">{{ blok.featuredProject_text }}</p>
+        <p class="font-body font-light mt-8 text-white max-w-xl">
+          {{ blok.featuredProject_text }}
+        </p>
 
         <div class="mt-8">
           <button class="btn btn-red">

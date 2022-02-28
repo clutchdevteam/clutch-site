@@ -7,7 +7,7 @@
         </h1>
       </AccentText>
 
-      <p class="font-fira text-lg md:w-1/2">{{ blok.hero_text }}</p>
+      <BaseText class="text-lg md:w-1/2">{{ blok.hero_text }}</BaseText>
 
       <div>
         <button class="btn btn-red">

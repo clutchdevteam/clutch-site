@@ -2,7 +2,7 @@
   <h2
     :class="`${
       !noGradient ? 'text-gradient' : 'text-white'
-    } flex items-center font-billion text-6xl md:text-8xl px-4`"
+    } flex items-center font-monts text-3xl lg:text-5xl`"
   >
     <slot />
   </h2>

@@ -1,7 +1,7 @@
 <template>
   <section class="base-wrapper relative overflow-hidden mt-48">
     <div class="container mx-auto z-20">
-      <h2 class="text-gradient font-billion px-4">{{ blok.title }}</h2>
+      <h2 class="text-gradient font-monts px-4">{{ blok.title }}</h2>
 
       <div class="lg:w-1/2 mx-auto pb-32">
         <p class="text-lg mb-12 leading-loose opacity-75">{{ blok.text }}</p>

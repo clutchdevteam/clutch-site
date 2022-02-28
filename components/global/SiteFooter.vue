@@ -10,14 +10,14 @@
       />
 
       <nav>
-        <ul class="flex items-center space-x-12 text-white font-fira">
+        <ul class="flex items-center space-x-12 text-white font-body">
           <li v-for="item in nav" :key="item.id">
             <nuxt-link :to="item.link.cached_url">{{ item.label }}</nuxt-link>
           </li>
         </ul>
       </nav>
     </div>
-    <p class="text-xs text-center text-white font-fira mt-6">
+    <p class="text-xs text-center text-white font-body mt-6">
       Copyright &copy; 2022 | Clutch Creative, LLC
     </p>
   </footer>

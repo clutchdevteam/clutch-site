@@ -9,15 +9,7 @@
         />
 
         <div
-          class="
-            absolute
-            bg-primary
-            top-0
-            transform
-            -translate-x-12
-            translate-y-12
-            md:-translate-x-24 md:translate-y-24
-          "
+          class="absolute bg-primary top-0 transform -translate-x-12 translate-y-12 md:-translate-x-24 md:translate-y-24"
           style="z-index: -999"
         >
           <img
@@ -31,14 +23,11 @@
       <div class="order-first mt-24 md:mt-0 p-4 md:p-0">
         <div class="mb-4">
           <FancyHeading>{{ blok.twoColumnVideo_title }}</FancyHeading>
-          <p class="text-sm font-fira">
-            {{ blok.twoColumnVideo_title_description }}
-          </p>
         </div>
 
-        <p class="font-fira md:w-3/4 opacity-75">
+        <BaseText class="md:w-3/4 opacity-75">
           {{ blok.twoColumnVideo_text }}
-        </p>
+        </BaseText>
       </div>
     </div>
   </section>

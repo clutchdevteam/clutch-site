@@ -6,7 +6,7 @@
       </nuxt-link>
     </div>
 
-    <nav class="hidden lg:flex text-white font-fira items-center">
+    <nav class="hidden lg:flex text-white font-body items-center">
       <ul class="flex items-center">
         <li v-for="menu in nav" :key="menu.id">
           <BaseMenu
@@ -58,18 +58,7 @@
             >
               <div @click="closeMenu">
                 <button
-                  class="
-                    flex
-                    justify-center
-                    items-center
-                    bg-white
-                    rounded-full
-                    ml-4
-                    mr-4
-                    mt-4
-                    h-12
-                    w-12
-                  "
+                  class="flex justify-center items-center bg-white rounded-full ml-4 mr-4 mt-4 h-12 w-12"
                   ref="closeButtonRef"
                   @click="closeMenu"
                   type="button"
