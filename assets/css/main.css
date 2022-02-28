@@ -6,6 +6,15 @@ body {
   @apply overflow-x-hidden text-black font-body;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-monts;
+}
+
 .base-wrapper {
   @apply container mx-auto px-4;
 }

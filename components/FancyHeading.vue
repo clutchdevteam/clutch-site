@@ -1,5 +1,5 @@
 <template>
-  <component :is="size" class="text-gradient flex items-center font-monts">
+  <component :is="size" class="text-gradient flex items-center font-bold">
     <slot />
   </component>
 </template>
