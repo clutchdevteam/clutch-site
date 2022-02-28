@@ -4,18 +4,19 @@
       class="base-wrapper h-full relative flex flex-col md:grid grid-cols-2 gap-12 justify-center items-center space-y-12 mt-32 py-8 mb-24"
     >
       <div class="md:order-last">
-        <AccentText class="font-monts font-bold text-5xl uppercase">
-          <h2 class="font-bold">{{ blok.featuredProject_name }}</h2>
-        </AccentText>
+        <p class="text-sm uppercase mb-3">Featured Project</p>
+        <FancyHeading class="text-5xl">
+          {{ blok.featuredProject_name }}
+        </FancyHeading>
 
-        <p class="font-body font-light mt-8 max-w-xl">
+        <BaseText class="mt-8 max-w-xl">
           {{ blok.featuredProject_text }}
-        </p>
+        </BaseText>
 
         <div class="mt-8">
-          <button class="btn btn-red">
+          <BaseButton>
             {{ blok.featuredProject_button }}
-          </button>
+          </BaseButton>
         </div>
       </div>
 
@@ -24,11 +25,13 @@
           class="w-2/5 md:w-1/3 absolute right-0 mt-12 md:mt-24"
           :src="blok.featuredProject_mobile_image.filename"
           :alt="blok.featuredProject_mobile_image_alt"
+          lazy
         />
         <img
           class="w-3/4 md:w-11/12"
           :src="blok.featuredProject_desktop_image.filename"
           :alt="blok.featuredProject_desktop_image_alt"
+          lazy
         />
       </div>
     </div>
@@ -70,7 +73,7 @@ export default {
 }
 
 .clutch-blue-bg {
-  background-color: #0095d4;
+  background-color: #f5f5f5;
   background-position: center;
 }
 </style>

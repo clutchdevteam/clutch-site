@@ -2,18 +2,16 @@
   <section class="my-28 md:my-48">
     <div class="relative flex flex-col md:flex-row space-y-16 md:space-x-12 justify-center">
       <div class="md:w-1/2">
-        <img
-          class="-mt-12 md:mt-0 w-full"
-          :src="blok.twoColumnImage_image.filename"
-          :alt="blok.twoColumnImage_alt"
-        />
+        <img class="-mt-12 md:mt-0 w-full" :src="blok.image.filename" :alt="blok.image.alt" />
       </div>
 
       <div class="md:w-1/2 md:mt-12 px-4 md:p-0">
-        <FancyHeading class="block mb-8">{{ blok.twoColumnImage_title }}</FancyHeading>
+        <FancyHeading class="text-2xl lg:text-4xl block mb-8">
+          <span v-html="blok.title" />
+        </FancyHeading>
 
-        <BaseText class="opacity-75 lg:max-w-xl md:pl-24">
-          {{ blok.twoColumnImage_text }}
+        <BaseText class="opacity-75 lg:max-w-xl">
+          {{ blok.text }}
         </BaseText>
       </div>
     </div>
