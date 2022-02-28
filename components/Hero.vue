@@ -22,11 +22,7 @@
 </template>
 
 <script>
-import AccentText from './AccentText.vue';
 export default {
-  components: {
-    AccentText,
-  },
   props: {
     blok: {
       type: Object,
@@ -38,7 +34,7 @@ export default {
 
 <style lang="postcss" scoped>
 section {
-  background: url(../assets/images/DesktopBg.png) no-repeat;
+  background: url(../assets/images/creative-angel.png) no-repeat;
   background-size: cover;
   background-position-x: left;
 }
