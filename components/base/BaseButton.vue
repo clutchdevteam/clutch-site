@@ -41,8 +41,6 @@ export default {
   }
 
   &:hover {
-    @apply shadow;
-
     background: linear-gradient(#fff, #fff) padding-box,
       linear-gradient(120deg, #0075ff, #d00000) border-box;
   }
