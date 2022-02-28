@@ -2,7 +2,7 @@
   <header class="z-50 absolute w-full flex items-center justify-between p-4">
     <div>
       <nuxt-link to="/">
-        <img v-if="loaded" class="w-24 lg:w-48" :src="logo.filename" :alt="logo.alt" />
+        <img v-if="loaded" class="w-24 lg:w-32" :src="logo.filename" :alt="logo.alt" />
       </nuxt-link>
     </div>
 
