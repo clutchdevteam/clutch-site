@@ -2,11 +2,11 @@
   <div :class="{ 'h-screen overflow-hidden': isMobileMenuOpen }">
     <SiteHeader :nav="mainNav" :logo="logo" />
 
-    <main>
+    <main :class="`${!isHomePage ? 'mt-24 lg:mt-32' : ''} ${lockScroll ? 'overflow-hidden' : ''}`">
       <Nuxt />
     </main>
 
-    <PreFooterCta />
+    <PreFooterCta v-if="!isContactPage" />
     <SiteFooter :nav="mainNav" :logo="logo" />
 
     <PortalTarget name="mobile-menu"></PortalTarget>
@@ -25,6 +25,9 @@ export default {
     },
     isHomePage() {
       return this.$route.fullPath === '/';
+    },
+    isContactPage() {
+      return this.$route.fullPath === '/contact-us';
     },
     lockScroll() {
       return this.pageHasModalOpen || this.isMobileMenuOpen;

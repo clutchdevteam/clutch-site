@@ -1,5 +1,5 @@
 <template>
-  <section class="container px-4 lg:px-0 mx-auto mt-12 lg:mt-24 mb-8">
+  <section class="container px-4 lg:px-0 mx-auto mt-12 lg:mt-24">
     <div
       class="bg-gradient-to-br from-red-500 to-primary shadow-md px-4 py-12 text-white text-center"
     >
