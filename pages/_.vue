@@ -28,7 +28,7 @@ export default {
       const storyblokInstance = new StoryblokBridge();
 
       // Use the input event for instant update of content
-      storyblokInstance.on('input', (event) => {
+      storyblokInstance.on(['input', 'change'], (event) => {
         if (event.story.id === this.story.id) {
           this.story.content = event.story.content;
         }

@@ -71,7 +71,7 @@ export default {
 
         content: '';
         margin-left: 20px;
-        border: 3px solid;
+        border-style: solid;
         border-image-slice: 1;
         border-width: 3px;
         border-image-source: linear-gradient(120deg, #d00000, #0075ff);
@@ -88,7 +88,7 @@ export default {
 
         content: '';
         margin-left: 20px;
-        border: 3px solid;
+        border-style: solid;
         border-image-slice: 1;
         border-width: 3px;
         border-image-source: linear-gradient(120deg, #d00000, #0075ff);
