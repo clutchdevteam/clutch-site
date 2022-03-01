@@ -26,6 +26,9 @@
   "Hero": {
     "description": "Auto imported from components/Hero.vue"
   },
+  "Highlight": {
+    "description": "Auto imported from components/Highlight.vue"
+  },
   "Page": {
     "description": "Auto imported from components/Page.vue"
   },
@@ -46,5 +49,8 @@
   },
   "BaseText": {
     "description": "Auto imported from components/base/BaseText.vue"
+  },
+  "BaseTwoCol": {
+    "description": "Auto imported from components/base/BaseTwoCol.vue"
   }
 }

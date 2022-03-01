@@ -31,9 +31,10 @@ export default {
 .btn {
   @apply font-body uppercase px-8 transition duration-150 ease-in-out;
 
-  background: linear-gradient(#fff, #fff) padding-box,
-    linear-gradient(120deg, #d00000, #0075ff) border-box;
-  border: 2px solid transparent;
+  border: 2px solid;
+  border-image-slice: 1;
+  border-width: 2px;
+  border-image-source: linear-gradient(120deg, #d00000, #0075ff);
 
   & span {
     display: block;
@@ -41,8 +42,7 @@ export default {
   }
 
   &:hover {
-    background: linear-gradient(#fff, #fff) padding-box,
-      linear-gradient(120deg, #0075ff, #d00000) border-box;
+    border-image-source: linear-gradient(120deg, #0075ff, #d00000);
   }
 }
 </style>

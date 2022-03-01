@@ -1,7 +1,7 @@
 <template>
   <section class="my-28 md:my-64 pb-12 md:pb-32">
     <div class="md:grid grid-cols-2 gap-12 items-center">
-      <div class="relative order-last mb-12 md:mb-0 pl-12 md:pl-0">
+      <div class="relative order-last mb-12 md:mb-0 pl-8 md:pl-0">
         <img class="block z-10" :src="blok.video.filename" :alt="blok.alt" />
 
         <div

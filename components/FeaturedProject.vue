@@ -1,5 +1,5 @@
 <template>
-  <section class="featured-project-container clutch-blue-bg my-28 md:my-48">
+  <section class="featured-project-container clutch-blue-bg mb-48">
     <div
       class="base-wrapper h-full relative flex flex-col md:grid grid-cols-2 gap-12 justify-center items-center lg:space-y-12 mt-32 py-8 mb-32"
     >
@@ -22,7 +22,7 @@
 
       <div class="relative transform md:-translate-y-36">
         <img
-          class="w-2/5 md:w-1/3 absolute right-0 mt-8 md:mt-24"
+          class="w-2/5 md:w-1/3 absolute right-0 mt-4 md:mt-24"
           :src="blok.featuredProject_mobile_image.filename"
           :alt="blok.featuredProject_mobile_image_alt"
           lazy

@@ -10,7 +10,7 @@
           <span v-html="blok.title" />
         </FancyHeading>
 
-        <BaseText class="opacity-75 lg:max-w-xl">
+        <BaseText class="opacity-75 lg:max-w-lg">
           {{ blok.text }}
         </BaseText>
       </div>

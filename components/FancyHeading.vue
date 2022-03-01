@@ -28,7 +28,7 @@ export default {
 @supports ((background-clip: text) or (-webkit-background-clip: text)) and
   ((text-fill-color: transparent) or (-webkit-text-fill-color: transparent)) {
   .text-gradient {
-    background-image: linear-gradient(to right, #d00000, #0075ff);
+    background-image: linear-gradient(120deg, #d00000, #0075ff);
     background-size: cover;
     background-clip: text;
     -webkit-background-clip: text;

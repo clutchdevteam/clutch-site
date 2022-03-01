@@ -15,6 +15,7 @@ You can directly use them in pages and other components without the need to impo
 - `<Footer>` | `<footer>` (components/Footer.vue)
 - `<Header>` | `<header>` (components/Header.vue)
 - `<Hero>` | `<hero>` (components/Hero.vue)
+- `<Highlight>` | `<highlight>` (components/Highlight.vue)
 - `<Page>` | `<page>` (components/Page.vue)
 - `<TwoColumnImage>` | `<two-column-image>` (components/TwoColumnImage.vue)
 - `<TwoColumnVideo>` | `<two-column-video>` (components/TwoColumnVideo.vue)
@@ -22,3 +23,4 @@ You can directly use them in pages and other components without the need to impo
 - `<BaseMenu>` | `<base-menu>` (components/base/BaseMenu.vue)
 - `<BaseMenuItem>` | `<base-menu-item>` (components/base/BaseMenuItem.vue)
 - `<BaseText>` | `<base-text>` (components/base/BaseText.vue)
+- `<BaseTwoCol>` | `<base-two-col>` (components/base/BaseTwoCol.vue)
