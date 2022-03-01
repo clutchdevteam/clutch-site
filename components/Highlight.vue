@@ -50,12 +50,16 @@ export default {
 
 <style lang="postcss" scoped>
 .img-wrapper {
-  position: relative;
-  aspect-ratio: 1.5 / 1;
+  @apply relative;
+}
+@supports (aspect-ratio) {
+  .img-wrapper {
+    aspect-ratio: 1.5 / 1;
 
-  & img {
-    object-fit: cover;
-    height: 100%;
+    & img {
+      object-fit: cover;
+      height: 100%;
+    }
   }
 }
 

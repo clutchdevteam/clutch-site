@@ -36,7 +36,7 @@ export default {
   @apply font-body uppercase px-8 transition duration-150 ease-in-out;
 
   &.gradient {
-    border: 2px solid;
+    border-style: solid;
     border-image-slice: 1;
     border-width: 2px;
     border-image-source: linear-gradient(120deg, #d00000, #0075ff);
