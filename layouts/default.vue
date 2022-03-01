@@ -2,7 +2,11 @@
   <div :class="{ 'h-screen overflow-hidden': isMobileMenuOpen }">
     <SiteHeader :nav="mainNav" :logo="logo" />
 
-    <main :class="`${!isHomePage ? 'mt-24 lg:mt-32' : ''} ${lockScroll ? 'overflow-hidden' : ''}`">
+    <main
+      :class="`${!isHomePage || isContactPage ? 'mt-24 lg:mt-32' : ''} ${
+        lockScroll ? 'overflow-hidden' : ''
+      }`"
+    >
       <Nuxt />
     </main>
 

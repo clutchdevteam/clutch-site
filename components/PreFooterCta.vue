@@ -7,7 +7,7 @@
       <h2 class="text-3xl lg:text-4xl max-w-lg mx-auto mt-3 mb-6">
         Let&apos;s build something great together.
       </h2>
-      <BaseButton class="w-full lg:w-auto" href="/" btn-style="white">Hire Us</BaseButton>
+      <BaseButton class="w-full lg:w-auto" href="/contact-us" btn-style="white">Hire Us</BaseButton>
     </div>
   </section>
 </template>

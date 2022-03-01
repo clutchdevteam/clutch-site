@@ -12,7 +12,7 @@
         <BaseText class="text-lg opacity-75 lg:w-3/4">{{ blok.text }}</BaseText>
 
         <div>
-          <BaseButton :href="blok.button[0].link.cached_url">
+          <BaseButton href="/contact-us">
             {{ blok.button[0].text }}
           </BaseButton>
         </div>

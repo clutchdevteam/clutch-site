@@ -1,5 +1,5 @@
 <template>
-  <section class="base-wrapper my-24 lg:my-52">
+  <section class="base-wrapper my-24 lg:my-48">
     <BaseTwoCol v-if="blok.imageRight" :image-right="blok.imageRight">
       <template v-slot:left>
         <div>

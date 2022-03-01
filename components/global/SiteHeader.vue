@@ -18,7 +18,7 @@
         </li>
       </ul>
 
-      <BaseButton href="/contact" class="ml-4">Hire us</BaseButton>
+      <BaseButton href="/contact-us" class="ml-4">Hire us</BaseButton>
     </nav>
 
     <div class="mobile lg:hidden">
@@ -91,6 +91,10 @@
                     </li>
                   </ul>
                 </nav>
+
+                <div class="p-4">
+                  <BaseButton class="w-full text-center" href="/contact-us">Hire us</BaseButton>
+                </div>
               </div>
             </div>
           </div>
