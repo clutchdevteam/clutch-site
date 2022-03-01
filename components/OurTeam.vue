@@ -1,5 +1,5 @@
 <template>
-  <section class="max-w-3xl mx-auto px-4 py-0 my-24 lg:my-48">
+  <section class="max-w-3xl mx-auto px-4 py-0 my-16 lg:my-48">
     <div class="flex flex-col items-center">
       <FancyHeading class="text-3xl lg:text-4xl mb-12">{{ blok.heading }}</FancyHeading>
 

@@ -1,5 +1,5 @@
 <template>
-  <section class="base-wrapper my-24 lg:my-48">
+  <section class="base-wrapper my-16 lg:my-48">
     <div class="grid lg:grid-cols-2 gap-12 items-center">
       <div class="lg:border-r border-gray-100">
         <p class="text-xs uppercase mb-4">{{ blok.kicker }}</p>
