@@ -3,7 +3,7 @@
     <SiteHeader :nav="mainNav" :logo="logo" />
 
     <main
-      :class="`${!isHomePage || isContactPage ? 'mt-24 lg:mt-32' : ''} ${
+      :class="`${isContactPage ? 'mt-24 lg:mt-32' : ''} ${
         lockScroll ? 'overflow-hidden' : ''
       } flex-grow`"
     >
