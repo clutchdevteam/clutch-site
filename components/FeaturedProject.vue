@@ -13,11 +13,11 @@
           {{ blok.featuredProject_text }}
         </BaseText>
 
-        <div class="mt-8">
+        <!-- <div class="mt-8">
           <BaseButton>
             {{ blok.featuredProject_button }}
           </BaseButton>
-        </div>
+        </div> -->
       </div>
 
       <div class="relative transform md:-translate-y-36">
