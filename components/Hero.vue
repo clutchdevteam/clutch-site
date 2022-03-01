@@ -4,7 +4,7 @@
       <div class="flex flex-col justify-center md:w-1/2 h-full space-y-12">
         <div>
           <BaseText class="uppercase">{{ blok.kicker }}</BaseText>
-          <FancyHeading class="text-3xl lg:text-8xl pb-2" size="h1">
+          <FancyHeading class="text-6xl lg:text-8xl pb-2" size="h1">
             <span v-html="blok.title" />
           </FancyHeading>
         </div>

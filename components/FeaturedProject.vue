@@ -1,11 +1,11 @@
 <template>
   <section class="featured-project-container clutch-blue-bg my-28 md:my-48">
     <div
-      class="base-wrapper h-full relative flex flex-col md:grid grid-cols-2 gap-12 justify-center items-center space-y-12 mt-32 py-8 mb-24"
+      class="base-wrapper h-full relative flex flex-col md:grid grid-cols-2 gap-12 justify-center items-center lg:space-y-12 mt-32 py-8 mb-32"
     >
       <div class="md:order-last">
-        <p class="text-sm uppercase mb-3">Featured Project</p>
-        <FancyHeading class="text-5xl">
+        <p class="text-xs uppercase mb-3">Featured Project</p>
+        <FancyHeading class="text-2xl lg:text-3xl">
           {{ blok.featuredProject_name }}
         </FancyHeading>
 
@@ -22,7 +22,7 @@
 
       <div class="relative transform md:-translate-y-36">
         <img
-          class="w-2/5 md:w-1/3 absolute right-0 mt-12 md:mt-24"
+          class="w-2/5 md:w-1/3 absolute right-0 mt-8 md:mt-24"
           :src="blok.featuredProject_mobile_image.filename"
           :alt="blok.featuredProject_mobile_image_alt"
           lazy
@@ -73,7 +73,7 @@ export default {
 }
 
 .clutch-blue-bg {
-  background-color: #f5f5f5;
+  background-color: #f2f2f2;
   background-position: center;
 }
 </style>

@@ -14,7 +14,7 @@
 
       <div class="order-first mt-24 md:mt-0 p-4 md:p-0">
         <div class="mb-4">
-          <FancyHeading class="text-2xl lg:text-4xl mb-8">
+          <FancyHeading class="text-3xl lg:text-4xl mb-8">
             <span v-html="blok.title" />
           </FancyHeading>
         </div>

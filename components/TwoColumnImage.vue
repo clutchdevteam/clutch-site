@@ -6,7 +6,7 @@
       </div>
 
       <div class="md:w-1/2 md:mt-12 px-4 md:p-0">
-        <FancyHeading class="text-2xl lg:text-4xl block mb-8">
+        <FancyHeading class="text-3xl lg:text-4xl block mb-8">
           <span v-html="blok.title" />
         </FancyHeading>
 
