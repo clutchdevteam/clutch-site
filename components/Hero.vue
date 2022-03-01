@@ -1,10 +1,10 @@
 <template>
   <section class="h-screen">
     <div class="base-wrapper h-full">
-      <div class="flex flex-col justify-center md:w-1/2 h-full space-y-12">
+      <div class="flex flex-col justify-center md:w-1/2 h-full space-y-8">
         <div>
-          <BaseText class="uppercase">{{ blok.kicker }}</BaseText>
-          <FancyHeading class="text-6xl lg:text-8xl pb-2" size="h1">
+          <BaseText class="uppercase text-sm">{{ blok.kicker }}</BaseText>
+          <FancyHeading class="uppercase text-5xl lg:text-8xl" size="h1">
             <span v-html="blok.title" />
           </FancyHeading>
         </div>

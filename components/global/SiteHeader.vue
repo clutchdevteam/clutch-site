@@ -23,7 +23,7 @@
 
     <div class="mobile lg:hidden">
       <button
-        :class="`p-4 ${isHomePage ? '' : ''}`"
+        class="p-2"
         ref="openButtonRef"
         @click="openMobileMenu"
         type="button"
