@@ -12,7 +12,7 @@
       </nav>
 
       <div>
-        <a href="#">
+        <a href="https://www.facebook.com/clutchCreativeAgency">
           <img src="~/assets/images/facebook.svg" alt="Facebook logo" />
         </a>
       </div>
