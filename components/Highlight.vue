@@ -1,9 +1,9 @@
 <template>
-  <section class="base-wrapper my-24 lg:my-48">
+  <section class="base-wrapper my-24 lg:my-52">
     <BaseTwoCol v-if="blok.imageRight" :image-right="blok.imageRight">
       <template v-slot:left>
         <div>
-          <p class="mb-4">{{ blok.kicker }}</p>
+          <p class="uppercase text-xs mb-4">{{ blok.kicker }}</p>
           <FancyHeading class="text-3xl lg:text-4xl lg:w-4/5 mb-8">{{ blok.heading }}</FancyHeading>
 
           <BaseText class="opacity-75 xl:w-3/4">{{ blok.text }}</BaseText>
@@ -28,7 +28,7 @@
         </div>
       </template>
       <template v-slot:right>
-        <p class="mb-4">{{ blok.kicker }}</p>
+        <p class="uppercase text-xs mb-4">{{ blok.kicker }}</p>
         <FancyHeading class="text-3xl lg:text-4xl lg:w-4/5 mb-8">{{ blok.heading }}</FancyHeading>
 
         <BaseText class="opacity-75 xl:w-3/4">{{ blok.text }}</BaseText>

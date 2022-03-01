@@ -29,6 +29,9 @@
   "Highlight": {
     "description": "Auto imported from components/Highlight.vue"
   },
+  "OurValues": {
+    "description": "Auto imported from components/OurValues.vue"
+  },
   "Page": {
     "description": "Auto imported from components/Page.vue"
   },

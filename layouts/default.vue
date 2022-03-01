@@ -6,6 +6,7 @@
       <Nuxt />
     </main>
 
+    <PreFooterCta />
     <SiteFooter :nav="mainNav" :logo="logo" />
 
     <PortalTarget name="mobile-menu"></PortalTarget>

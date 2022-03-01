@@ -16,6 +16,7 @@ You can directly use them in pages and other components without the need to impo
 - `<Header>` | `<header>` (components/Header.vue)
 - `<Hero>` | `<hero>` (components/Hero.vue)
 - `<Highlight>` | `<highlight>` (components/Highlight.vue)
+- `<OurValues>` | `<our-values>` (components/OurValues.vue)
 - `<Page>` | `<page>` (components/Page.vue)
 - `<TwoColumnImage>` | `<two-column-image>` (components/TwoColumnImage.vue)
 - `<TwoColumnVideo>` | `<two-column-video>` (components/TwoColumnVideo.vue)

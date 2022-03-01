@@ -1,7 +1,7 @@
 <template>
   <section class="my-28 md:my-64 pb-12 md:pb-32">
-    <div class="md:grid grid-cols-2 gap-12 items-center">
-      <div class="relative order-last mb-12 md:mb-0 pl-8 md:pl-0">
+    <div class="md:grid grid-cols-2 2xl:grid-cols-3 gap-12 items-center">
+      <div class="relative order-last 2xl:col-span-2 mb-12 md:mb-0 pl-8 md:pl-0">
         <img class="block z-10" :src="blok.video.filename" :alt="blok.alt" />
 
         <div
@@ -12,7 +12,7 @@
         </div>
       </div>
 
-      <div class="order-first mt-24 md:mt-0 p-4 md:p-0">
+      <div class="order-first 2xl:col-span-1 mt-24 md:mt-0 p-4 md:p-0">
         <div class="mb-4">
           <FancyHeading class="text-3xl lg:text-4xl mb-8">
             <span v-html="blok.title" />
@@ -24,11 +24,6 @@
         </BaseText>
       </div>
     </div>
-
-    <img
-      src="~/assets/images/floater_1.svg"
-      class="hidden md:block left-0 w-full absolute -mt-10 xl:-mt-32"
-    />
   </section>
 </template>
 
@@ -67,6 +62,12 @@ section {
 @screen lg {
   section {
     margin-left: 10%;
+  }
+}
+
+@screen 2xl {
+  section {
+    margin-left: 20%;
   }
 }
 </style>
