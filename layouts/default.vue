@@ -1,11 +1,11 @@
 <template>
-  <div :class="{ 'h-screen overflow-hidden': isMobileMenuOpen }">
+  <div :class="`${isMobileMenuOpen ? 'h-screen overflow-hidden' : ''} flex flex-col min-h-screen`">
     <SiteHeader :nav="mainNav" :logo="logo" />
 
     <main
       :class="`${!isHomePage || isContactPage ? 'mt-24 lg:mt-32' : ''} ${
         lockScroll ? 'overflow-hidden' : ''
-      }`"
+      } flex-grow`"
     >
       <Nuxt />
     </main>

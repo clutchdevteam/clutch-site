@@ -1,5 +1,5 @@
 <template>
-  <div class="max-w-4xl mx-auto mb-24">
+  <div class="max-w-4xl mx-auto px-4 lg:px-0">
     <section class="grid lg:grid-cols-2 gap-12 lg:gap-20">
       <div class="lg:order-last">
         <h1 class="font-body uppercase text-sm mb-2">Contact Us</h1>
