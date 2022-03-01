@@ -22,6 +22,48 @@ export default {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: '' },
       { name: 'format-detection', content: 'telephone=no' },
+      {
+        hid: 'og:url',
+        proptery: 'og:url',
+        content: 'https://theclutch.dev',
+      },
+      {
+        hid: 'og:title',
+        property: 'og:title',
+        content: 'Clutch | A JAMstack Development Agency',
+      },
+      {
+        hid: 'og:description',
+        property: 'og:description',
+        content: 'Affordable JAMstack solutions for modern day small businesses',
+      },
+      {
+        hid: 'og:image',
+        property: 'og:image',
+        content: '/og-image.png',
+      },
+      {
+        hid: 'twitter:url',
+        proptery: 'twitter:url',
+        content: 'https://theclutch.dev',
+      },
+      {
+        hid: 'twitter:title',
+        property: 'twitter:title',
+        content: 'Clutch | A JAMstack Development Agency',
+      },
+      {
+        hid: 'twitter:description',
+        property: 'twitter:description',
+        content: 'Affordable JAMstack solutions for modern day small businesses',
+      },
+      { name: 'twitter:card', content: 'summary_large_image' },
+      {
+        hid: 'twitter:image',
+        property: 'twitter:image',
+        content: '/og-image.png',
+      },
+      { name: 'twitter:card', content: 'summary_large_image' },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
