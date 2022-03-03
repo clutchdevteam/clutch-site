@@ -1,10 +1,10 @@
-const axios = require('axios');
-const isPreview = process.env.NODE_ENV === 'development';
+const axios = require("axios");
+const isPreview = process.env.NODE_ENV === "development";
 
 export default {
   // Target: https://go.nuxtjs.dev/config-target
-  target: 'static',
-  dev: process.env.NODE_ENV !== 'production',
+  target: "static",
+  dev: process.env.NODE_ENV !== "production",
 
   env: {
     STORYBLOK_API_KEY: process.env.STORYBLOK_API_KEY,
@@ -13,67 +13,75 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'Clutch | Creative JAMstack Web Solutions',
+    title: "Clutch | Creative JAMstack Web Solutions",
     htmlAttrs: {
-      lang: 'en',
+      lang: "en",
     },
     meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
-      { name: 'format-detection', content: 'telephone=no' },
+      { charset: "utf-8" },
+      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { hid: "description", name: "description", content: "" },
+      { name: "format-detection", content: "telephone=no" },
       {
-        hid: 'og:url',
-        proptery: 'og:url',
-        content: 'https://theclutch.dev',
+        hid: "og:url",
+        proptery: "og:url",
+        content: "https://theclutch.dev",
       },
       {
-        hid: 'og:title',
-        property: 'og:title',
-        content: 'Clutch | A JAMstack Development Agency',
+        hid: "og:title",
+        property: "og:title",
+        content: "Clutch | A JAMstack Development Agency",
       },
       {
-        hid: 'og:description',
-        property: 'og:description',
-        content: 'Affordable JAMstack solutions for modern day small businesses',
+        hid: "og:description",
+        property: "og:description",
+        content:
+          "Affordable JAMstack solutions for modern day small businesses",
       },
       {
-        hid: 'og:image',
-        property: 'og:image',
-        content: '/og-image.png',
+        hid: "og:image",
+        property: "og:image",
+        content: "/og-image.png",
       },
       {
-        hid: 'twitter:url',
-        proptery: 'twitter:url',
-        content: 'https://theclutch.dev',
+        hid: "twitter:url",
+        proptery: "twitter:url",
+        content: "https://theclutch.dev",
       },
       {
-        hid: 'twitter:title',
-        property: 'twitter:title',
-        content: 'Clutch | A JAMstack Development Agency',
+        hid: "twitter:title",
+        property: "twitter:title",
+        content: "Clutch | A JAMstack Development Agency",
       },
       {
-        hid: 'twitter:description',
-        property: 'twitter:description',
-        content: 'Affordable JAMstack solutions for modern day small businesses',
+        hid: "twitter:description",
+        property: "twitter:description",
+        content:
+          "Affordable JAMstack solutions for modern day small businesses",
       },
-      { name: 'twitter:card', content: 'summary_large_image' },
       {
-        hid: 'twitter:image',
-        property: 'twitter:image',
-        content: '/og-image.png',
+        hid: "t-type",
+        name: "twitter:card",
+        content: "summary_large_image",
       },
-      { name: 'twitter:card', content: 'summary_large_image' },
+      {
+        hid: "twitter:image",
+        property: "twitter:image",
+        content: "/og-image.png",
+      },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
       {
-        rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600;700&display=swap',
+        rel: "stylesheet",
+        href:
+          "https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600;700&display=swap",
       },
       {
-        rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap',
+        rel: "stylesheet",
+        href:
+          "https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap",
       },
     ],
   },
@@ -84,12 +92,12 @@ export default {
     crawler: false, // Revisit in the future
     routes: function (callback) {
       const token = process.env.STORYBLOK_API_KEY;
-      const version = isPreview ? 'draft' : 'published';
+      const version = isPreview ? "draft" : "published";
       let cacheVersion = 0;
       // ignore these files and folders
-      const ignoreFiles = ['home', 'global'];
+      const ignoreFiles = ["home", "global"];
 
-      const routes = ['/'];
+      const routes = ["/"];
 
       const getRoutes = async (ignoreFiles) => {
         axios
@@ -106,8 +114,13 @@ export default {
               .then((res) => {
                 Object.keys(res.data.links).forEach((key) => {
                   if (!ignoreFiles.includes(res.data.links[key].slug)) {
-                    if (!(res.data.links[key].is_folder && !res.data.links[key].is_startpage)) {
-                      routes.push('/' + res.data.links[key].slug);
+                    if (
+                      !(
+                        res.data.links[key].is_folder &&
+                        !res.data.links[key].is_startpage
+                      )
+                    ) {
+                      routes.push("/" + res.data.links[key].slug);
                     }
                   }
                 });
@@ -124,10 +137,10 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: ['@/assets/css/main.css'],
+  css: ["@/assets/css/main.css"],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: ['~/plugins/components'],
+  plugins: ["~/plugins/components"],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -135,26 +148,26 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://go.nuxtjs.dev/tailwindcss
-    '@nuxtjs/tailwindcss',
+    "@nuxtjs/tailwindcss",
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    '@nuxtjs/axios',
+    "@nuxtjs/axios",
     [
-      'storyblok-nuxt',
+      "storyblok-nuxt",
       {
         accessToken: process.env.STORYBLOK_API_KEY,
-        cacheProvider: 'memory',
+        cacheProvider: "memory",
       },
     ],
-    'portal-vue/nuxt',
+    "portal-vue/nuxt",
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     babel: {
-      plugins: ['@babel/plugin-proposal-optional-chaining'],
+      plugins: ["@babel/plugin-proposal-optional-chaining"],
     },
   },
 };
