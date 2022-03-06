@@ -60,7 +60,7 @@ export default {
           "Affordable JAMstack solutions for modern day small businesses",
       },
       {
-        hid: "t-type",
+        hid: "twitter:card",
         name: "twitter:card",
         content: "summary_large_image",
       },
