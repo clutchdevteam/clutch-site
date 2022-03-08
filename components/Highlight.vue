@@ -2,15 +2,17 @@
   <section class="base-wrapper my-16 lg:my-48">
     <BaseTwoCol v-if="blok.imageRight" :image-right="blok.imageRight">
       <template v-slot:left>
-        <div>
+        <div id="contentRef">
           <p class="uppercase text-xs mb-4">{{ blok.kicker }}</p>
-          <FancyHeading class="text-3xl lg:text-4xl lg:w-4/5 mb-8">{{ blok.heading }}</FancyHeading>
+          <FancyHeading class="text-3xl lg:text-4xl lg:w-4/5 mb-8">{{
+            blok.heading
+          }}</FancyHeading>
 
           <BaseText class="opacity-75 xl:w-3/4">{{ blok.text }}</BaseText>
         </div>
       </template>
       <template v-slot:right>
-        <div class="img-wrapper right">
+        <div id="imageRef" class="img-wrapper right">
           <img
             class="shadow-md object-right"
             :src="blok.image.filename"
@@ -23,27 +25,65 @@
 
     <BaseTwoCol v-else>
       <template v-slot:left>
-        <div class="img-wrapper left">
-          <img class="shadow-md" :src="blok.image.filename" :alt="blok.image.alt" loading="lazy" />
+        <div id="imageRef" class="img-wrapper left">
+          <img
+            class="shadow-md"
+            :src="blok.image.filename"
+            :alt="blok.image.alt"
+            loading="lazy"
+          />
         </div>
       </template>
       <template v-slot:right>
-        <p class="uppercase text-xs mb-4">{{ blok.kicker }}</p>
-        <FancyHeading class="text-3xl lg:text-4xl lg:w-4/5 mb-8">{{ blok.heading }}</FancyHeading>
+        <div>
+          <p class="uppercase text-xs mb-4">{{ blok.kicker }}</p>
+          <FancyHeading class="text-3xl lg:text-4xl lg:w-4/5 mb-8">{{
+            blok.heading
+          }}</FancyHeading>
 
-        <BaseText class="opacity-75 xl:w-3/4">{{ blok.text }}</BaseText>
+          <BaseText class="opacity-75 xl:w-3/4">{{ blok.text }}</BaseText>
+        </div>
       </template>
     </BaseTwoCol>
   </section>
 </template>
 
 <script>
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
 export default {
   props: {
     blok: {
       type: Object,
       required: true,
     },
+  },
+  mounted() {
+    const query = "(prefers-reduced-motion: no-preference)";
+    const mediaQueryList = window.matchMedia(query);
+    const prefersReducedMotion = !mediaQueryList.matches;
+
+    if (prefersReducedMotion) {
+      null;
+    } else {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: "#contentRef",
+        },
+      });
+
+      tl.from("#contentRef", { y: 100, opacity: 0 }).to("#contentRef", {
+        y: 0,
+        opacity: 1,
+      });
+      tl.from("#imageRef", { scale: 0, opacity: 0 }, 0.05).to("#imageRef", {
+        scale: 1,
+        opacity: 1,
+      });
+    }
   },
 };
 </script>
@@ -69,7 +109,7 @@ export default {
       &::after {
         @apply absolute inset-0 w-full h-full;
 
-        content: '';
+        content: "";
         margin-left: 20px;
         border-style: solid;
         border-image-slice: 1;
@@ -86,7 +126,7 @@ export default {
       &::after {
         @apply absolute inset-0 w-full h-full;
 
-        content: '';
+        content: "";
         margin-left: 20px;
         border-style: solid;
         border-image-slice: 1;

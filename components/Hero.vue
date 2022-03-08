@@ -53,8 +53,6 @@ export default {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: "#headingRef",
-          start: "center center",
-          end: "center center",
         },
       });
 
