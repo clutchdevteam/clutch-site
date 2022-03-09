@@ -110,11 +110,11 @@ export default {
           /* eslint-disable-next-line camelcase */
           .then((space_res) => {
             // timestamp of latest publish
-            cacheVersion = space_res.data.space.version;
+            // cacheVersion = space_res.data.space.version;
             // Call for all Links using the Links API: https://www.storyblok.com/docs/Delivery-Api/Links
             axios
               .get(
-                `https://api.storyblok.com/v1/cdn/links?token=${token}&version=${version}&cv=${cacheVersion}`
+                `https://api.storyblok.com/v1/cdn/links?token=${token}&version=${version}`
               )
               .then((res) => {
                 Object.keys(res.data.links).forEach((key) => {
