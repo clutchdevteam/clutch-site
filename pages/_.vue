@@ -28,27 +28,24 @@ export default {
     },
   },
   mounted() {
-    this.$storybridge(() => {
-      const storyblokInstance = new StoryblokBridge();
-
-      // Use the input event for instant update of content
-      storyblokInstance.on("enterEditMode", (event) => {
-        this.isProdSite && this.$fetch();
-
-        if (event.story.id === this.story.id) {
-          this.story.content = event.story.content;
-        }
-      });
-
-      // Use the bridge to listen the events
-      storyblokInstance.on(["input", "published", "change"], (event) => {
-        // window.location.reload()
-        this.$nuxt.$router.go({
-          path: this.$nuxt.$router.currentRoute,
-          force: true,
+    this.$storybridge(
+      () => {
+        // eslint-disable-next-line no-undef
+        const storyblokInstance = new StoryblokBridge();
+        storyblokInstance.on("enterEditmode", (event) => {
+          this.isProdSite && this.$fetch();
+          this.getStory(event.storyId);
         });
-      });
-    });
+        storyblokInstance.on(["input", "published", "change"], (event) =>
+          this.handleEvent(event)
+        );
+      },
+      (error) => {
+        if (this.$nuxt.context.isDev && this.$route.query._storyblok) {
+          this.logError(error);
+        }
+      }
+    );
   },
   async fetch() {
     if (!this.loaded) {
@@ -83,6 +80,33 @@ export default {
         });
       }
     }
+  },
+  methods: {
+    getStory(storyId, version = "draft") {
+      return this.$storyapi
+        .get(`cdn/stories/${storyId}`, {
+          version: version,
+          resolve_relations: resolveRelations.join(","),
+        })
+        .then(({ data }) => {
+          this.story.content = data.story && data.story.content;
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    },
+    handleEvent(event) {
+      if (event.action === "input") {
+        if (event.story.id === this.story.id) {
+          this.story.content = event.story.content;
+        }
+      } else {
+        this.$nuxt.$router.go({
+          path: this.$nuxt.$router.currentRoute,
+          force: true,
+        });
+      }
+    },
   },
 };
 </script>
