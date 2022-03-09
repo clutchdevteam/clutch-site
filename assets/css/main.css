@@ -14,3 +14,13 @@ h6 {
 .base-wrapper {
   @apply container mx-auto px-4;
 }
+
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.25s;
+}
+
+.page-enter,
+.page-leave-to {
+  opacity: 0;
+}

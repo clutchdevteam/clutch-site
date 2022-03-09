@@ -1,4 +1,9 @@
 const axios = require("axios");
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
 const isPreview = process.env.NODE_ENV === "development";
 
 export default {
@@ -140,7 +145,7 @@ export default {
   css: ["@/assets/css/main.css"],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: ["~/plugins/components"],
+  plugins: ["~/plugins/components", "~/plugins/gsap.client.js"],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -169,5 +174,6 @@ export default {
     babel: {
       plugins: ["@babel/plugin-proposal-optional-chaining"],
     },
+    transpile: ["gsap"],
   },
 };

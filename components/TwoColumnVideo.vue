@@ -74,7 +74,7 @@ export default {
         scrollTrigger: {
           trigger: this.videoRef,
           start: "top bottom",
-          end: "center center",
+          end: "top center",
         },
       });
 
@@ -85,7 +85,7 @@ export default {
           scale: 1,
         }
       );
-      tl.from(this.contentRef, { y: -100, opacity: 0, duration: 0.25 }, 0.5).to(
+      tl.from(this.contentRef, { y: 100, opacity: 0 }, 0.25).to(
         this.contentRef,
         {
           y: 0,
