@@ -9,6 +9,7 @@ export default {
 
   env: {
     STORYBLOK_PREVIEW_API_KEY: process.env.STORYBLOK_PREVIEW_API_KEY,
+    STORYBLOK_API_KEY: process.env.STORYBLOK_API_KEY,
     NODE_ENV: process.env.NODE_ENV,
   },
 
@@ -94,7 +95,7 @@ export default {
     routes: function (callback) {
       const token = isPreview
         ? process.env.STORYBLOK_PREVIEW_API_KEY
-        : process.env.STORYBLOK_KEY
+        : process.env.STORYBLOK_API_KEY
       const version = isPreview ? 'draft' : 'published'
       // ignore these files and folders
       const ignoreFiles = ['home', 'global']
