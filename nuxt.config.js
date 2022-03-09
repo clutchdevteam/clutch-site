@@ -98,7 +98,6 @@ export default {
     routes: function (callback) {
       const token = process.env.STORYBLOK_API_KEY;
       const version = isPreview ? "draft" : "published";
-      let cacheVersion = 0;
       // ignore these files and folders
       const ignoreFiles = ["home", "global"];
 
