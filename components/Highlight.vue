@@ -2,7 +2,7 @@
   <section class="base-wrapper my-16 lg:my-48">
     <BaseTwoCol v-if="blok.imageRight" :image-right="blok.imageRight">
       <template v-slot:left>
-        <div id="contentRef">
+        <div :id="`contentRef-${uid}`">
           <p class="uppercase text-xs mb-4">{{ blok.kicker }}</p>
           <FancyHeading class="text-3xl lg:text-4xl lg:w-4/5 mb-8">{{
             blok.heading
@@ -12,7 +12,7 @@
         </div>
       </template>
       <template v-slot:right>
-        <div id="imageRef" class="img-wrapper right">
+        <div :id="`imageRef-${uid}`" class="img-wrapper right">
           <img
             class="shadow-md object-right"
             :src="blok.image.filename"
@@ -25,7 +25,7 @@
 
     <BaseTwoCol v-else>
       <template v-slot:left>
-        <div id="imageRef" class="img-wrapper left">
+        <div :id="`imageRef-${uid}`" class="img-wrapper left">
           <img
             class="shadow-md"
             :src="blok.image.filename"
@@ -35,7 +35,7 @@
         </div>
       </template>
       <template v-slot:right>
-        <div>
+        <div :id="`contentRef-${uid}`">
           <p class="uppercase text-xs mb-4">{{ blok.kicker }}</p>
           <FancyHeading class="text-3xl lg:text-4xl lg:w-4/5 mb-8">{{
             blok.heading
@@ -61,6 +61,11 @@ export default {
       required: true,
     },
   },
+  computed: {
+    uid() {
+      return this.blok._uid;
+    },
+  },
   mounted() {
     const query = "(prefers-reduced-motion: no-preference)";
     const mediaQueryList = window.matchMedia(query);
@@ -71,18 +76,26 @@ export default {
     } else {
       const tl = gsap.timeline({
         scrollTrigger: {
-          trigger: "#contentRef",
+          trigger: `#contentRef-${this.uid}`,
+          start: "top bottom",
         },
       });
 
-      tl.from("#contentRef", { y: 100, opacity: 0 }).to("#contentRef", {
-        y: 0,
-        opacity: 1,
-      });
-      tl.from("#imageRef", { scale: 0, opacity: 0 }, 0.05).to("#imageRef", {
-        scale: 1,
-        opacity: 1,
-      });
+      tl.from(`#contentRef-${this.uid}`, { y: 100, opacity: 0 }).to(
+        `#contentRef-${this.uid}`,
+        {
+          y: 0,
+          opacity: 1,
+        }
+      );
+
+      tl.from(`#imageRef-${this.uid}`, { scale: 0, opacity: 0 }, 0.25).to(
+        `#imageRef-${this.uid}`,
+        {
+          scale: 1,
+          opacity: 1,
+        }
+      );
     }
   },
 };

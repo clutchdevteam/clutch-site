@@ -66,14 +66,15 @@ export default {
         },
       });
 
-      tl.from(this.imageRef, { opacity: 0, scale: 0, ease: "back" }).to(
-        this.imageRef,
-        {
-          opacity: 1,
-          scale: 1,
-        }
-      );
-      tl.from(this.contentRef, { y: -100, opacity: 0, duration: 0.25 }, 0.5).to(
+      tl.from(this.imageRef, {
+        opacity: 0,
+        scale: 0,
+        ease: "back",
+      }).to(this.imageRef, {
+        opacity: 1,
+        scale: 1,
+      });
+      tl.from(this.contentRef, { y: 100, opacity: 0 }, 0.25).to(
         this.contentRef,
         {
           y: 0,

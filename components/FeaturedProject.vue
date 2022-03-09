@@ -83,25 +83,29 @@ export default {
         scrollTrigger: {
           trigger: this.mobileImageRef,
           start: "top bottom",
-          end: "center center",
+          end: "top center",
         },
       });
 
-      tl.from(this.desktopImageRef, { x: -1000, opacity: 0 }).to(
-        this.desktopImageRef,
-        {
-          x: 0,
-          opacity: 1,
-        }
-      );
+      tl.from(this.desktopImageRef, {
+        x: -1000,
+        opacity: 0,
+        duration: 0.5,
+        ease: "back",
+      }).to(this.desktopImageRef, {
+        x: 0,
+        opacity: 1,
+      });
 
-      tl.from(this.mobileImageRef, { x: -1000, opacity: 0 }, 0.25).to(
+      tl.from(
         this.mobileImageRef,
-        {
-          x: 0,
-          opacity: 1,
-        }
-      );
+        { x: -1000, opacity: 0, duration: 0.5, ease: "back" },
+        0.25
+      ).to(this.mobileImageRef, {
+        x: 0,
+        opacity: 1,
+      });
+
       tl.from(this.contentRef, { y: -50, opacity: 0, duration: 0.25 }, 0.5).to(
         this.contentRef,
         {

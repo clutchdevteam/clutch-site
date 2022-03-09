@@ -1,9 +1,11 @@
 <template>
-  <section class="base-wrapper my-16 lg:my-48">
+  <section ref="serviceRef" class="base-wrapper my-16 lg:my-48">
     <div class="grid lg:grid-cols-2 gap-12 items-center">
       <div class="lg:border-r border-gray-100">
         <p class="text-xs uppercase mb-4">{{ blok.kicker }}</p>
-        <FancyHeading class="text-3xl lg:text-4xl lg:w-4/5 mb-8">{{ blok.heading }}</FancyHeading>
+        <FancyHeading class="text-3xl lg:text-4xl lg:w-4/5 mb-8">{{
+          blok.heading
+        }}</FancyHeading>
         <BaseText class="opacity-75 lg:w-3/4">{{ blok.text }}</BaseText>
       </div>
 
@@ -15,7 +17,9 @@
 
             <hr class="mb-6 w-1/2" />
             <ul>
-              <li class="mb-1" v-for="item in service.items" :key="item.id">{{ item.label }}</li>
+              <li class="mb-1" v-for="item in service.items" :key="item.id">
+                {{ item.label }}
+              </li>
             </ul>
           </div>
         </div>
@@ -25,12 +29,47 @@
 </template>
 
 <script>
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
 export default {
   props: {
     blok: {
       type: Object,
       required: true,
     },
+  },
+  computed: {
+    serviceRef() {
+      return this.$refs.serviceRef;
+    },
+  },
+  mounted() {
+    const query = "(prefers-reduced-motion: no-preference)";
+    const mediaQueryList = window.matchMedia(query);
+    const prefersReducedMotion = !mediaQueryList.matches;
+
+    if (prefersReducedMotion) {
+      null;
+    } else {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: this.serviceRef,
+          start: "top bottom",
+          end: "center center",
+        },
+      });
+
+      tl.from(this.serviceRef, {
+        y: 100,
+        opacity: 0,
+      }).to(this.serviceRef, {
+        y: 0,
+        opacity: 1,
+      });
+    }
   },
 };
 </script>

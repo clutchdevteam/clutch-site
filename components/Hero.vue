@@ -56,25 +56,37 @@ export default {
         },
       });
 
-      tl.from("#headingRef", { y: 100, opacity: 0, ease: "back" }).to(
-        "#headingRef",
+      tl.from("#headingRef", {
+        y: 100,
+        opacity: 0,
+        ease: "back",
+        delay: 0.25,
+        duration: 0.5,
+      }).to("#headingRef", {
+        y: 0,
+        opacity: 1,
+      });
+      tl.from("#kickerRef", { y: -50, opacity: 0, duration: 0.5 }, 0.75).to(
+        "#kickerRef",
         {
           y: 0,
           opacity: 1,
         }
       );
-      tl.from("#kickerRef", { y: -50, opacity: 0 }, 0.5).to("#kickerRef", {
-        y: 0,
-        opacity: 1,
-      });
-      tl.from("#sloganRef", { y: 50, opacity: 0 }, 0.5).to("#sloganRef", {
-        y: 0,
-        opacity: 1,
-      });
-      tl.from("#buttonRef", { x: -50, opacity: 0 }, 0.5).to("#buttonRef", {
-        x: 0,
-        opacity: 1,
-      });
+      tl.from("#sloganRef", { y: 50, opacity: 0, duration: 0.5 }, 0.75).to(
+        "#sloganRef",
+        {
+          y: 0,
+          opacity: 1,
+        }
+      );
+      tl.from("#buttonRef", { x: -50, opacity: 0, duration: 0.5 }, 0.75).to(
+        "#buttonRef",
+        {
+          x: 0,
+          opacity: 1,
+        }
+      );
     }
   },
 };
