@@ -86,7 +86,6 @@ export default {
       return this.$storyapi
         .get(`cdn/stories/${storyId}`, {
           version: version,
-          resolve_relations: resolveRelations.join(","),
         })
         .then(({ data }) => {
           this.story.content = data.story && data.story.content;
