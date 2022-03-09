@@ -99,6 +99,7 @@ export default {
       const version = isPreview ? 'draft' : 'published'
       // ignore these files and folders
       const ignoreFiles = ['home', 'global']
+      let cacheVersion = 0
 
       const routes = ['/']
 
