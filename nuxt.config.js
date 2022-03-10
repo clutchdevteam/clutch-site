@@ -69,7 +69,7 @@ export default {
       {
         hid: 'twitter:image',
         property: 'twitter:image',
-        content: '/og-image.png',
+        content: 'theclutch.dev/og-image.png',
       },
     ],
     link: [
