@@ -143,7 +143,7 @@ export default {
   css: ['@/assets/css/main.css'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: ['~/plugins/components', '~/plugins/gsap.client.js'],
+  plugins: ['~/plugins/components'],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
