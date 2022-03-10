@@ -26,7 +26,7 @@ export default {
       { name: 'format-detection', content: 'telephone=no' },
       {
         hid: 'og:url',
-        proptery: 'og:url',
+        property: 'og:url',
         content: 'https://theclutch.dev',
       },
       {
@@ -42,22 +42,22 @@ export default {
       },
       {
         hid: 'og:image',
-        property: 'og:image',
+        name: 'og:image',
         content: '/og-image.png',
       },
       {
         hid: 'twitter:url',
-        proptery: 'twitter:url',
+        name: 'twitter:url',
         content: 'https://theclutch.dev',
       },
       {
         hid: 'twitter:title',
-        property: 'twitter:title',
+        name: 'twitter:title',
         content: 'Clutch | A JAMstack Development Agency',
       },
       {
         hid: 'twitter:description',
-        property: 'twitter:description',
+        name: 'twitter:description',
         content:
           'Affordable JAMstack solutions for modern day small businesses',
       },
@@ -68,7 +68,7 @@ export default {
       },
       {
         hid: 'twitter:image',
-        property: 'twitter:image',
+        name: 'twitter:image',
         content: 'theclutch.dev/og-image.png',
       },
     ],
@@ -143,7 +143,7 @@ export default {
   css: ['@/assets/css/main.css'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: ['~/plugins/components', '~/plugins/gsap.client.js'],
+  plugins: ['~/plugins/components'],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
