@@ -71,7 +71,6 @@ export default {
         property: 'twitter:image',
         content: '/og-image.png',
       },
-      { name: 'twitter:card', content: 'summary_large_image' },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
