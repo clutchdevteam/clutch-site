@@ -7,7 +7,7 @@
     <nuxt-link
       :class="`${classes} block`"
       v-show="!menu.submenus"
-      :to="menu.link.cached_url"
+      :to="$formRoute({ url: menu.link.cached_url })"
     >
       {{ menu.label }}
     </nuxt-link>

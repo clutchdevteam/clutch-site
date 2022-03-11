@@ -87,6 +87,10 @@ export default {
     ],
   },
 
+  router: {
+    trailingSlash: false,
+  },
+
   generate: {
     concurrency: 25,
     fallback: true,
@@ -98,11 +102,12 @@ export default {
       const version = isPreview ? 'draft' : 'published'
       // ignore these files and folders
       const ignoreFiles = ['home', 'global']
+      const ignoreFolders = ['case-studies']
       let cacheVersion = 0
 
       const routes = ['/']
 
-      const getRoutes = async (ignoreFiles) => {
+      const getRoutes = async (ignoreFiles, ignoreFolders) => {
         axios
           .get(`https://api.storyblok.com/v1/cdn/spaces/me?token=${token}`)
           /* eslint-disable-next-line camelcase */
@@ -116,7 +121,12 @@ export default {
               )
               .then((res) => {
                 Object.keys(res.data.links).forEach((key) => {
-                  if (!ignoreFiles.includes(res.data.links[key].slug)) {
+                  if (
+                    !ignoreFiles.includes(res.data.links[key].slug) &&
+                    !ignoreFolders.includes(
+                      res.data.links[key].slug.split('/')[0]
+                    )
+                  ) {
                     if (
                       !(
                         res.data.links[key].is_folder &&
@@ -133,7 +143,7 @@ export default {
           })
       }
 
-      getRoutes(ignoreFiles)
+      getRoutes(ignoreFiles, ignoreFolders)
 
       return routes
     },
@@ -143,7 +153,11 @@ export default {
   css: ['@/assets/css/main.css'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: ['~/plugins/components', '~/plugins/rich-text-renderer.js'],
+  plugins: [
+    '~/plugins/components',
+    '~/plugins/rich-text-renderer.js',
+    '~/plugins/formRoute.js',
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
