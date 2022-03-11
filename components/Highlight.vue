@@ -2,7 +2,7 @@
   <section class="base-wrapper my-16 lg:my-48">
     <BaseTwoCol v-if="blok.imageRight" :image-right="blok.imageRight">
       <template v-slot:left>
-        <div :id="`contentRef-${uid}`">
+        <div>
           <p class="uppercase text-xs mb-4">{{ blok.kicker }}</p>
           <FancyHeading class="text-3xl lg:text-4xl lg:w-4/5 mb-8">{{
             blok.heading
@@ -35,7 +35,7 @@
         </div>
       </template>
       <template v-slot:right>
-        <div :id="`contentRef-${uid}`">
+        <div>
           <p class="uppercase text-xs mb-4">{{ blok.kicker }}</p>
           <FancyHeading class="text-3xl lg:text-4xl lg:w-4/5 mb-8">{{
             blok.heading
@@ -49,11 +49,6 @@
 </template>
 
 <script>
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
-
 export default {
   props: {
     blok: {
@@ -61,44 +56,7 @@ export default {
       required: true,
     },
   },
-  computed: {
-    uid() {
-      return this.blok._uid;
-    },
-  },
-  mounted() {
-    const query = "(prefers-reduced-motion: no-preference)";
-    const mediaQueryList = window.matchMedia(query);
-    const prefersReducedMotion = !mediaQueryList.matches;
-
-    if (prefersReducedMotion) {
-      null;
-    } else {
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: `#contentRef-${this.uid}`,
-          start: "top bottom",
-        },
-      });
-
-      tl.from(`#contentRef-${this.uid}`, { y: 100, opacity: 0 }).to(
-        `#contentRef-${this.uid}`,
-        {
-          y: 0,
-          opacity: 1,
-        }
-      );
-
-      tl.from(`#imageRef-${this.uid}`, { scale: 0, opacity: 0 }, 0.25).to(
-        `#imageRef-${this.uid}`,
-        {
-          scale: 1,
-          opacity: 1,
-        }
-      );
-    }
-  },
-};
+}
 </script>
 
 <style lang="postcss" scoped>
@@ -122,7 +80,7 @@ export default {
       &::after {
         @apply absolute inset-0 w-full h-full;
 
-        content: "";
+        content: '';
         margin-left: 20px;
         border-style: solid;
         border-image-slice: 1;
@@ -139,7 +97,7 @@ export default {
       &::after {
         @apply absolute inset-0 w-full h-full;
 
-        content: "";
+        content: '';
         margin-left: 20px;
         border-style: solid;
         border-image-slice: 1;
