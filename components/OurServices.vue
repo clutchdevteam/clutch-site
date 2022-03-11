@@ -1,5 +1,5 @@
 <template>
-  <section ref="serviceRef" class="base-wrapper my-16 lg:my-48">
+  <section class="base-wrapper my-16 lg:my-48">
     <div class="grid lg:grid-cols-2 gap-12 items-center">
       <div class="lg:border-r border-gray-100">
         <p class="text-xs uppercase mb-4">{{ blok.kicker }}</p>
@@ -29,11 +29,6 @@
 </template>
 
 <script>
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
-
 export default {
   props: {
     blok: {
@@ -41,37 +36,5 @@ export default {
       required: true,
     },
   },
-  computed: {
-    serviceRef() {
-      return this.$refs.serviceRef;
-    },
-  },
-  mounted() {
-    const query = "(prefers-reduced-motion: no-preference)";
-    const mediaQueryList = window.matchMedia(query);
-    const prefersReducedMotion = !mediaQueryList.matches;
-
-    if (prefersReducedMotion) {
-      null;
-    } else {
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: this.serviceRef,
-          start: "top bottom",
-          end: "center center",
-        },
-      });
-
-      tl.from(this.serviceRef, {
-        y: 100,
-        opacity: 0,
-      }).to(this.serviceRef, {
-        y: 0,
-        opacity: 1,
-      });
-    }
-  },
-};
+}
 </script>
-
-<style lang="scss" scoped></style>
