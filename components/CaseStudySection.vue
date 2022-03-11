@@ -1,50 +1,30 @@
 <template>
-  <section class="base-wrapper my-16 lg:my-48">
-    <BaseTwoCol v-if="blok.imageRight" :image-right="blok.imageRight">
-      <template v-slot:left>
-        <div>
-          <p class="uppercase text-xs mb-4">{{ blok.kicker }}</p>
-          <FancyHeading class="text-3xl lg:text-4xl lg:w-4/5 mb-8">{{
-            blok.heading
-          }}</FancyHeading>
-
-          <BaseText class="opacity-75 xl:w-3/4">{{ blok.text }}</BaseText>
-        </div>
-      </template>
-      <template v-slot:right>
-        <div class="img-wrapper right">
+  <section class="max-w-4xl mx-auto px-4 lg:px-0 mb-20 lg:mb-36">
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-20">
+      <div :class="{ 'lg:order-last': blok.imageRight }">
+        <div
+          :class="`${blok.hasImgBorder ? 'img-wrapper' : ''} ${
+            blok.imageRight ? 'right' : 'left'
+          }`"
+        >
           <img
-            class="shadow-md object-right"
+            class="w-full"
             :src="blok.image.filename"
             :alt="blok.image.alt"
             loading="lazy"
           />
         </div>
-      </template>
-    </BaseTwoCol>
+      </div>
 
-    <BaseTwoCol v-else>
-      <template v-slot:left>
-        <div class="img-wrapper left">
-          <img
-            class="shadow-md"
-            :src="blok.image.filename"
-            :alt="blok.image.alt"
-            loading="lazy"
-          />
-        </div>
-      </template>
-      <template v-slot:right>
+      <div>
         <div>
-          <p class="uppercase text-xs mb-4">{{ blok.kicker }}</p>
-          <FancyHeading class="text-3xl lg:text-4xl lg:w-4/5 mb-8">{{
-            blok.heading
+          <FancyHeading class="text-xl lg:text-3xl mb-8">{{
+            blok.title
           }}</FancyHeading>
-
-          <BaseText class="opacity-75 xl:w-3/4">{{ blok.text }}</BaseText>
+          <BaseRichText :content="blok.description" />
         </div>
-      </template>
-    </BaseTwoCol>
+      </div>
+    </div>
   </section>
 </template>
 
@@ -65,8 +45,6 @@ export default {
 }
 @supports (aspect-ratio) {
   .img-wrapper {
-    aspect-ratio: 1.5 / 1;
-
     & img {
       object-fit: cover;
       height: 100%;
@@ -92,7 +70,6 @@ export default {
         margin-right: 2rem;
       }
     }
-
     &.left {
       &::after {
         @apply absolute inset-0 w-full h-full;

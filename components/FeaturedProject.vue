@@ -13,11 +13,11 @@
           {{ blok.featuredProject_text }}
         </BaseText>
 
-        <!-- <div class="mt-8">
-          <BaseButton>
-            {{ blok.featuredProject_button }}
+        <div class="mt-8">
+          <BaseButton :href="blok.featuredProject_button[0].link.cached_url">
+            {{ blok.featuredProject_button[0].text }}
           </BaseButton>
-        </div> -->
+        </div>
       </div>
 
       <div class="relative transform md:-translate-y-36">
