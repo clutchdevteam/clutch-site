@@ -6,7 +6,9 @@
       <nav>
         <ul class="flex items-center space-x-6 font-body text-sm">
           <li v-for="item in nav" :key="item.id">
-            <nuxt-link :to="item.link.cached_url">{{ item.label }}</nuxt-link>
+            <nuxt-link :to="$formRoute({ url: item.link.cached_url })">{{
+              item.label
+            }}</nuxt-link>
           </li>
         </ul>
       </nav>

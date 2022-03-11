@@ -5,7 +5,12 @@
     </span>
   </nuxt-link>
 
-  <button v-else :class="`btn ${btnStyle}`" :type="type" @click="$emit('click')">
+  <button
+    v-else
+    :class="`btn ${btnStyle}`"
+    :type="type"
+    @click="$emit('click')"
+  >
     <span>
       <slot />
     </span>
@@ -28,7 +33,7 @@ export default {
       default: 'gradient',
     },
   },
-};
+}
 </script>
 
 <style lang="postcss" scoped>

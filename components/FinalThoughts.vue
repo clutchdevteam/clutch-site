@@ -5,9 +5,11 @@
 
       <div class="lg:w-1/2 mx-auto pb-32">
         <p class="text-lg mb-12 leading-loose opacity-75">{{ blok.text }}</p>
-        <nuxt-link class="btn btn-red" :to="ctaButton.link.cached_url">{{
-          ctaButton.text
-        }}</nuxt-link>
+        <nuxt-link
+          class="btn btn-red"
+          :to="$formRoute({ url: ctaButton.link.cached_url })"
+          >{{ ctaButton.text }}</nuxt-link
+        >
       </div>
     </div>
   </section>
@@ -23,10 +25,10 @@ export default {
   },
   computed: {
     ctaButton() {
-      return this.blok.button[0];
+      return this.blok.button[0]
     },
   },
-};
+}
 </script>
 
 <style lang="postcss" scoped>
