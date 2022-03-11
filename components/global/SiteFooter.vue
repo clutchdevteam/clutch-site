@@ -13,16 +13,22 @@
 
       <div>
         <a href="https://www.facebook.com/clutchCreativeAgency">
-          <img src="~/assets/images/facebook.svg" alt="Facebook logo" />
+          <img
+            src="~/assets/images/facebook.svg"
+            alt="Facebook logo"
+            loading="lazy"
+          />
         </a>
       </div>
     </div>
-    <p class="text-xs text-center font-body mt-6">Copyright &copy; 2022 | Clutch Creative, LLC</p>
+    <p class="text-xs text-center font-body mt-6">
+      Copyright &copy; 2022 | Clutch Creative, LLC
+    </p>
   </footer>
 </template>
 
 <script>
-import { mapState } from 'vuex';
+import { mapState } from 'vuex'
 
 export default {
   props: {
@@ -38,5 +44,5 @@ export default {
   computed: {
     ...mapState('global', ['loaded']),
   },
-};
+}
 </script>

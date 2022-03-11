@@ -5,7 +5,12 @@
         ref="videoRef"
         class="relative order-last 2xl:col-span-2 mb-12 md:mb-0 pl-8 md:pl-0"
       >
-        <img class="block z-10" :src="blok.video.filename" :alt="blok.alt" />
+        <img
+          class="block z-10"
+          :src="blok.video.filename"
+          :alt="blok.video.alt"
+          loading="lazy"
+        />
 
         <div
           class="absolute bg-primary top-0 transform -translate-x-12 translate-y-12 md:-translate-x-24 md:translate-y-24"
@@ -13,8 +18,9 @@
         >
           <img
             :src="blok.video.filename"
-            :alt="blok.alt"
+            alt=""
             style="mix-blend-mode: multiply"
+            loading="lazy"
           />
         </div>
       </div>
@@ -38,11 +44,11 @@
 </template>
 
 <script>
-import FancyHeading from "./FancyHeading.vue";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import FancyHeading from './FancyHeading.vue'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger)
 
 export default {
   components: {
@@ -56,45 +62,45 @@ export default {
   },
   computed: {
     videoRef() {
-      return this.$refs.videoRef;
+      return this.$refs.videoRef
     },
     contentRef() {
-      return this.$refs.contentRef;
+      return this.$refs.contentRef
     },
   },
   mounted() {
-    const query = "(prefers-reduced-motion: no-preference)";
-    const mediaQueryList = window.matchMedia(query);
-    const prefersReducedMotion = !mediaQueryList.matches;
+    const query = '(prefers-reduced-motion: no-preference)'
+    const mediaQueryList = window.matchMedia(query)
+    const prefersReducedMotion = !mediaQueryList.matches
 
     if (prefersReducedMotion) {
-      null;
+      null
     } else {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: this.videoRef,
-          start: "top bottom",
-          end: "top center",
+          start: 'top bottom',
+          end: 'top center',
         },
-      });
+      })
 
-      tl.from(this.videoRef, { opacity: 0, scale: 0, ease: "back" }).to(
+      tl.from(this.videoRef, { opacity: 0, scale: 0, ease: 'back' }).to(
         this.videoRef,
         {
           opacity: 1,
           scale: 1,
         }
-      );
+      )
       tl.from(this.contentRef, { y: 100, opacity: 0 }, 0.25).to(
         this.contentRef,
         {
           y: 0,
           opacity: 1,
         }
-      );
+      )
     }
   },
-};
+}
 </script>
 
 <style lang="postcss" scoped>

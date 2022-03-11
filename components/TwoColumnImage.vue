@@ -9,6 +9,7 @@
           class="-mt-12 md:mt-0 w-full"
           :src="blok.image.filename"
           :alt="blok.image.alt"
+          loading="lazy"
         />
       </div>
 
@@ -26,11 +27,11 @@
 </template>
 
 <script>
-import FancyHeading from "./FancyHeading.vue";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import FancyHeading from './FancyHeading.vue'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger)
 
 export default {
   components: {
@@ -44,44 +45,44 @@ export default {
   },
   computed: {
     imageRef() {
-      return this.$refs.imageRef;
+      return this.$refs.imageRef
     },
     contentRef() {
-      return this.$refs.contentRef;
+      return this.$refs.contentRef
     },
   },
   mounted() {
-    const query = "(prefers-reduced-motion: no-preference)";
-    const mediaQueryList = window.matchMedia(query);
-    const prefersReducedMotion = !mediaQueryList.matches;
+    const query = '(prefers-reduced-motion: no-preference)'
+    const mediaQueryList = window.matchMedia(query)
+    const prefersReducedMotion = !mediaQueryList.matches
 
     if (prefersReducedMotion) {
-      null;
+      null
     } else {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: this.imageRef,
-          start: "top bottom",
-          end: "center center",
+          start: 'top bottom',
+          end: 'center center',
         },
-      });
+      })
 
       tl.from(this.imageRef, {
         opacity: 0,
         scale: 0,
-        ease: "back",
+        ease: 'back',
       }).to(this.imageRef, {
         opacity: 1,
         scale: 1,
-      });
+      })
       tl.from(this.contentRef, { y: 100, opacity: 0 }, 0.25).to(
         this.contentRef,
         {
           y: 0,
           opacity: 1,
         }
-      );
+      )
     }
   },
-};
+}
 </script>

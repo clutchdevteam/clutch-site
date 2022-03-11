@@ -15,7 +15,7 @@
           class="valueRef flex flex-col justify-between space-y-4 border-2 border-gray-200 px-8 py-5 bg-white"
           :key="value.id"
         >
-          <img class="w-12" :src="value.image.filename" alt="" />
+          <img class="w-12" :src="value.image.filename" alt="" loading="lazy" />
 
           <div>
             <h3 class="text-2xl mb-2">{{ value.title }}</h3>
@@ -28,10 +28,10 @@
 </template>
 
 <script>
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger)
 
 export default {
   props: {
@@ -41,31 +41,31 @@ export default {
     },
   },
   mounted() {
-    const query = "(prefers-reduced-motion: no-preference)";
-    const mediaQueryList = window.matchMedia(query);
-    const prefersReducedMotion = !mediaQueryList.matches;
+    const query = '(prefers-reduced-motion: no-preference)'
+    const mediaQueryList = window.matchMedia(query)
+    const prefersReducedMotion = !mediaQueryList.matches
 
     if (prefersReducedMotion) {
-      null;
+      null
     } else {
       const tl = gsap.timeline({
         scrollTrigger: {
-          trigger: "#valueHeadingRef",
-          start: "top bottom",
-          end: "center center",
+          trigger: '#valueHeadingRef',
+          start: 'top bottom',
+          end: 'center center',
         },
-      });
+      })
 
-      tl.from("#valueHeadingRef", {
+      tl.from('#valueHeadingRef', {
         opacity: 0,
         y: -20,
-      }).to("#valueHeadingRef", {
+      }).to('#valueHeadingRef', {
         opacity: 1,
         y: 0,
-      });
+      })
 
       tl.from(
-        ".valueRef",
+        '.valueRef',
         {
           y: 25,
           opacity: 0,
@@ -75,13 +75,13 @@ export default {
           duration: 0.25,
         },
         0.5
-      ).to(".valueRef", {
+      ).to('.valueRef', {
         y: 0,
         opacity: 1,
-      });
+      })
     }
   },
-};
+}
 </script>
 
 <style lang="postcss" scoped>
