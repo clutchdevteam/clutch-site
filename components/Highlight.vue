@@ -12,7 +12,7 @@
         </div>
       </template>
       <template v-slot:right>
-        <div :id="`imageRef-${uid}`" class="img-wrapper right">
+        <div class="img-wrapper right">
           <img
             class="shadow-md object-right"
             :src="blok.image.filename"
@@ -25,7 +25,7 @@
 
     <BaseTwoCol v-else>
       <template v-slot:left>
-        <div :id="`imageRef-${uid}`" class="img-wrapper left">
+        <div class="img-wrapper left">
           <img
             class="shadow-md"
             :src="blok.image.filename"
