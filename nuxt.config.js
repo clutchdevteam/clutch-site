@@ -43,7 +43,7 @@ export default {
       {
         hid: 'og:image',
         name: 'og:image',
-        content: '/og-image.png',
+        content: 'https://theclutch.dev/og-image.png',
       },
       {
         hid: 'twitter:url',
@@ -69,7 +69,7 @@ export default {
       {
         hid: 'twitter:image',
         name: 'twitter:image',
-        content: 'theclutch.dev/og-image.png',
+        content: 'https://theclutch.dev/og-image.png',
       },
     ],
     link: [
