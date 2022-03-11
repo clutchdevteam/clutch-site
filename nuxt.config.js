@@ -102,12 +102,11 @@ export default {
       const version = isPreview ? 'draft' : 'published'
       // ignore these files and folders
       const ignoreFiles = ['home', 'global']
-      const ignoreFolders = ['case-studies']
       let cacheVersion = 0
 
       const routes = ['/']
 
-      const getRoutes = async (ignoreFiles, ignoreFolders) => {
+      const getRoutes = async (ignoreFiles) => {
         axios
           .get(`https://api.storyblok.com/v1/cdn/spaces/me?token=${token}`)
           /* eslint-disable-next-line camelcase */
@@ -121,12 +120,7 @@ export default {
               )
               .then((res) => {
                 Object.keys(res.data.links).forEach((key) => {
-                  if (
-                    !ignoreFiles.includes(res.data.links[key].slug) &&
-                    !ignoreFolders.includes(
-                      res.data.links[key].slug.split('/')[0]
-                    )
-                  ) {
+                  if (!ignoreFiles.includes(res.data.links[key].slug)) {
                     if (
                       !(
                         res.data.links[key].is_folder &&
@@ -143,7 +137,7 @@ export default {
           })
       }
 
-      getRoutes(ignoreFiles, ignoreFolders)
+      getRoutes(ignoreFiles)
 
       return routes
     },
