@@ -15,7 +15,7 @@
           class="flex flex-col justify-between space-y-4 border-2 border-gray-200 px-8 py-5 bg-white"
           :key="value.id"
         >
-          <img class="w-12" :src="value.image.filename" alt="" />
+          <img class="w-12" :src="value.image.filename" alt="" loading="lazy" />
 
           <div>
             <h3 class="text-2xl mb-2">{{ value.title }}</h3>

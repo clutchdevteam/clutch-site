@@ -8,6 +8,7 @@
           class="-mt-12 md:mt-0 w-full"
           :src="blok.image.filename"
           :alt="blok.image.alt"
+          loading="lazy"
         />
       </div>
 
@@ -25,6 +26,8 @@
 </template>
 
 <script>
+import FancyHeading from '~/components/FancyHeading'
+
 export default {
   components: {
     FancyHeading,

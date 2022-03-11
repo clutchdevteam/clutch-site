@@ -25,13 +25,13 @@
           class="w-2/5 md:w-1/3 absolute right-0 mt-4 md:mt-24 z-20"
           :src="blok.featuredProject_mobile_image.filename"
           :alt="blok.featuredProject_mobile_image_alt"
-          lazy
+          loading="lazy"
         />
         <img
           class="w-3/4 md:w-11/12 z-10"
           :src="blok.featuredProject_desktop_image.filename"
           :alt="blok.featuredProject_desktop_image_alt"
-          lazy
+          loading="lazy"
         />
       </div>
     </div>
