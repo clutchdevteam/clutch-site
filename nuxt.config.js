@@ -143,7 +143,7 @@ export default {
   css: ['@/assets/css/main.css'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: ['~/plugins/components'],
+  plugins: ['~/plugins/components', '~/plugins/rich-text-renderer.js'],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -165,6 +165,7 @@ export default {
       },
     ],
     'portal-vue/nuxt',
+    '@nuxtjs/composition-api/module',
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
