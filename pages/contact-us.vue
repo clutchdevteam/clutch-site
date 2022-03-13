@@ -73,7 +73,12 @@
           <label>Don't fill this out if you're human: <input name="bot-field" /></label>
         </p>
 
-        <BaseButton class="w-full lg:w-auto float-right" type="submit">Send</BaseButton>
+        <BaseButton :disabled="isSubmitting" class="w-full lg:w-auto float-right" type="submit"> {{ btnText }} </BaseButton>
+
+        <p 
+          v-if="responseMessage"
+          :class="`${
+            responseState === 'success' ? 'text-green-700' : 'text-red-700'} text-sm absolute mt-12`"> {{ this.responseMessage }} </p>
       </form>
     </section>
   </div>
@@ -90,6 +95,9 @@ export default {
         project: '',
         message: '',
       },
+      responseMessage: null,
+      responseState: null,
+      isSubmitting: false,
     };
   },
   computed: {
@@ -99,6 +107,9 @@ export default {
         ? 'draft'
         : 'published';
     },
+    btnText() {
+      return this.isSubmitting ? 'Submitting...' : 'Send';
+    }
   },
   mounted() {
     this.$storybridge(() => {
@@ -128,6 +139,7 @@ export default {
         .join('&');
     },
     handleSubmit() {
+      this.isSubmitting = true;
       fetch('/', {
         method: 'post',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -140,6 +152,7 @@ export default {
           if (res.status === 200) {
             this.responseMessage = "Thanks for reaching out! We'll be in contact shortly!";
             this.responseState = 'success';
+            this.isSubmitting = false;
 
             this.form.name = '';
             this.form.email = '';
@@ -148,6 +161,7 @@ export default {
           } else {
             this.responseMessage = 'Oops! Looks like something went wrong. Please try again!';
             this.responseState = 'error';
+            this.isSubmitting = false;
           }
         })
         .catch((e) => console.error(e));
