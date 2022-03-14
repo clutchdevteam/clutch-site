@@ -6,11 +6,33 @@
   <body {{ BODY_ATTRS }}>
     {{ APP }}
 
-    <form name="Contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
+    <form
+      name="Contact"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+      hidden
+    >
       <input type="text" name="name" />
       <input type="email" name="email" />
       <select name="project"></select>
       <textarea type="text" name="message"></textarea>
+
+      <button type="submit">Send</button>
+    </form>
+
+    <form
+      name="Subscribe"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+      hidden
+    >
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <select name="project"></select>
+      <textarea type="text" name="notes"></textarea>
+      <input type="text" name="companyName" />
+      <input type="text" name="companyWebsite" />
+      <input type="text" name="companySize" />
 
       <button type="submit">Send</button>
     </form>
