@@ -15,8 +15,8 @@
       </p>
       <p class="flex items-center text-lg">
         $<span
-          :class="`text-7xl font-bold mx-1 ${
-            bestValue ? 'text-gradient' : 'text-gray-500'
+          :class="`text-4xl lg:text-7xl font-bold mx-1 ${
+            bestValue ? 'text-gradient' : 'text-gray-400'
           }`"
         >
           {{ price }}</span
@@ -35,7 +35,12 @@
       </ul>
 
       <div class="mt-6">
-        <BaseButton v-if="subscribe" class="w-full">Subscribe Today</BaseButton>
+        <BaseButton
+          v-if="subscribe"
+          class="w-full text-center"
+          href="/subscribe"
+          >Subscribe Today</BaseButton
+        >
 
         <div v-else class="text-center">
           <nuxt-link class="underline" :to="$formRoute({ url: '/contact-us' })"

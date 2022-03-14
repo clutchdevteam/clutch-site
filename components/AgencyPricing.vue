@@ -1,6 +1,6 @@
 <template>
   <section class="base-wrapper my-16 lg:my-48">
-    <div class="grid grid-cols-5 gap-8">
+    <div class="grid lg:grid-cols-5 gap-8">
       <div class="col-span-2">
         <div>
           <p class="uppercase text-xs mb-4">{{ blok.kicker }}</p>
@@ -16,7 +16,7 @@
       </div>
 
       <div class="col-span-3">
-        <div class="grid grid-cols-2 gap-6">
+        <div class="grid lg:grid-cols-2 gap-6">
           <PricingCard
             v-for="card in blok.card"
             :key="card._uid"
