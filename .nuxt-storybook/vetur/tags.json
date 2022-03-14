@@ -8,6 +8,15 @@
   "AccentText": {
     "description": "Auto imported from components/AccentText.vue"
   },
+  "AgencyPricing": {
+    "description": "Auto imported from components/AgencyPricing.vue"
+  },
+  "CaseStudySection": {
+    "description": "Auto imported from components/CaseStudySection.vue"
+  },
+  "CaseStudyTitle": {
+    "description": "Auto imported from components/CaseStudyTitle.vue"
+  },
   "FancyHeading": {
     "description": "Auto imported from components/FancyHeading.vue"
   },
@@ -29,11 +38,23 @@
   "Highlight": {
     "description": "Auto imported from components/Highlight.vue"
   },
+  "OurServices": {
+    "description": "Auto imported from components/OurServices.vue"
+  },
+  "OurTeam": {
+    "description": "Auto imported from components/OurTeam.vue"
+  },
   "OurValues": {
     "description": "Auto imported from components/OurValues.vue"
   },
   "Page": {
     "description": "Auto imported from components/Page.vue"
+  },
+  "PreFooterCta": {
+    "description": "Auto imported from components/PreFooterCta.vue"
+  },
+  "PricingCard": {
+    "description": "Auto imported from components/PricingCard.vue"
   },
   "TwoColumnImage": {
     "description": "Auto imported from components/TwoColumnImage.vue"
@@ -55,5 +76,14 @@
   },
   "BaseTwoCol": {
     "description": "Auto imported from components/base/BaseTwoCol.vue"
+  },
+  "BaseRichText": {
+    "description": "Auto imported from components/base/BaseRichText/BaseRichText.vue"
+  },
+  "BaseBaseRichTextHeading": {
+    "description": "Auto imported from components/base/BaseRichText/Heading.vue"
+  },
+  "BaseBaseRichTextParagraph": {
+    "description": "Auto imported from components/base/BaseRichText/Paragraph.vue"
   }
 }

@@ -14,10 +14,14 @@ import { createStore } from './store.js'
 /* Plugins */
 
 import nuxt_plugin_plugin_78729279 from 'nuxt_plugin_plugin_78729279' // Source: ./components/plugin.js (mode: 'all')
+import nuxt_plugin_plugin_c118e6be from 'nuxt_plugin_plugin_c118e6be' // Source: ./composition-api/plugin.mjs (mode: 'all')
 import nuxt_plugin_portalvue_4c66dab8 from 'nuxt_plugin_portalvue_4c66dab8' // Source: ./portal-vue.js (mode: 'all')
 import nuxt_plugin_templatesplugin5301f4e4_6b5c3243 from 'nuxt_plugin_templatesplugin5301f4e4_6b5c3243' // Source: ./templates.plugin.5301f4e4.js (mode: 'all')
 import nuxt_plugin_axios_7ac9eb0f from 'nuxt_plugin_axios_7ac9eb0f' // Source: ./axios.js (mode: 'all')
 import nuxt_plugin_components_6fb0430c from 'nuxt_plugin_components_6fb0430c' // Source: ../plugins/components (mode: 'all')
+import nuxt_plugin_richtextrenderer_98325662 from 'nuxt_plugin_richtextrenderer_98325662' // Source: ../plugins/rich-text-renderer.js (mode: 'all')
+import nuxt_plugin_formRoute_1f3e0330 from 'nuxt_plugin_formRoute_1f3e0330' // Source: ../plugins/formRoute.js (mode: 'all')
+import nuxt_plugin_meta_24681bf3 from 'nuxt_plugin_meta_24681bf3' // Source: ./composition-api/meta.mjs (mode: 'all')
 
 // Component: <ClientOnly>
 Vue.component(ClientOnly.name, ClientOnly)
@@ -82,7 +86,7 @@ async function createApp(ssrContext, config = {}) {
   // here we inject the router and store to all child components,
   // making them available everywhere as `this.$router` and `this.$store`.
   const app = {
-    head: {"title":"Clutch | Creative JAMstack Web Solutions","htmlAttrs":{"lang":"en"},"meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":""},{"name":"format-detection","content":"telephone=no"}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.ico"},{"rel":"stylesheet","href":"https:\u002F\u002Ffonts.googleapis.com\u002Fcss2?family=Josefin+Sans:wght@400;600;700&display=swap"},{"rel":"stylesheet","href":"https:\u002F\u002Ffonts.googleapis.com\u002Fcss2?family=Montserrat:wght@700&display=swap"}],"style":[],"script":[]},
+    head: {"title":"Clutch | Creative JAMstack Web Solutions","htmlAttrs":{"lang":"en"},"meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":""},{"name":"format-detection","content":"telephone=no"},{"hid":"og:url","property":"og:url","content":"https:\u002F\u002Ftheclutch.dev"},{"hid":"og:title","property":"og:title","content":"Clutch | A JAMstack Development Agency"},{"hid":"og:description","property":"og:description","content":"Affordable JAMstack solutions for modern day small businesses"},{"hid":"og:image","name":"og:image","content":"https:\u002F\u002Ftheclutch.dev\u002Fog-image.png"},{"hid":"twitter:url","name":"twitter:url","content":"https:\u002F\u002Ftheclutch.dev"},{"hid":"twitter:title","name":"twitter:title","content":"Clutch | A JAMstack Development Agency"},{"hid":"twitter:description","name":"twitter:description","content":"Affordable JAMstack solutions for modern day small businesses"},{"hid":"twitter:card","name":"twitter:card","content":"summary_large_image"},{"hid":"twitter:image","name":"twitter:image","content":"https:\u002F\u002Ftheclutch.dev\u002Fog-image.png"}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.ico"},{"rel":"stylesheet","href":"https:\u002F\u002Ffonts.googleapis.com\u002Fcss2?family=Josefin+Sans:wght@400;600;700&display=swap"},{"rel":"stylesheet","href":"https:\u002F\u002Ffonts.googleapis.com\u002Fcss2?family=Montserrat:wght@700&display=swap"}],"style":[],"script":[]},
 
     store,
     router,
@@ -215,6 +219,10 @@ async function createApp(ssrContext, config = {}) {
     await nuxt_plugin_plugin_78729279(app.context, inject)
   }
 
+  if (typeof nuxt_plugin_plugin_c118e6be === 'function') {
+    await nuxt_plugin_plugin_c118e6be(app.context, inject)
+  }
+
   if (typeof nuxt_plugin_portalvue_4c66dab8 === 'function') {
     await nuxt_plugin_portalvue_4c66dab8(app.context, inject)
   }
@@ -229,6 +237,18 @@ async function createApp(ssrContext, config = {}) {
 
   if (typeof nuxt_plugin_components_6fb0430c === 'function') {
     await nuxt_plugin_components_6fb0430c(app.context, inject)
+  }
+
+  if (typeof nuxt_plugin_richtextrenderer_98325662 === 'function') {
+    await nuxt_plugin_richtextrenderer_98325662(app.context, inject)
+  }
+
+  if (typeof nuxt_plugin_formRoute_1f3e0330 === 'function') {
+    await nuxt_plugin_formRoute_1f3e0330(app.context, inject)
+  }
+
+  if (typeof nuxt_plugin_meta_24681bf3 === 'function') {
+    await nuxt_plugin_meta_24681bf3(app.context, inject)
   }
 
   // Lock enablePreview in context

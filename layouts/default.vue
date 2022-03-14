@@ -1,5 +1,9 @@
 <template>
-  <div :class="`${isMobileMenuOpen ? 'h-screen overflow-hidden' : ''} flex flex-col min-h-screen`">
+  <div
+    :class="`${
+      isMobileMenuOpen ? 'h-screen overflow-hidden' : ''
+    } flex flex-col min-h-screen`"
+  >
     <SiteHeader :nav="mainNav" :logo="logo" />
 
     <main
@@ -18,24 +22,32 @@
 </template>
 
 <script>
-import { mapState } from 'vuex';
+import { mapState } from 'vuex'
 
 export default {
   computed: {
-    ...mapState('global', ['pageHasModalOpen', 'isMobileMenuOpen', 'mainNav', 'logo']),
+    ...mapState('global', [
+      'pageHasModalOpen',
+      'isMobileMenuOpen',
+      'mainNav',
+      'logo',
+    ]),
 
     hasOpenMenu() {
-      return this.pageHasModalOpen || this.isMobileMenuOpen;
+      return this.pageHasModalOpen || this.isMobileMenuOpen
     },
     isHomePage() {
-      return this.$route.fullPath === '/';
+      return this.$route.fullPath === '/'
     },
     isContactPage() {
-      return this.$route.fullPath === '/contact-us';
+      return (
+        this.$route.fullPath === '/contact-us' ||
+        this.$route.fullPath === '/subscribe'
+      )
     },
     lockScroll() {
-      return this.pageHasModalOpen || this.isMobileMenuOpen;
+      return this.pageHasModalOpen || this.isMobileMenuOpen
     },
   },
-};
+}
 </script>
