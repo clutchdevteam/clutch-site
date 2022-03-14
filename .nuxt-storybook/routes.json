@@ -1,9 +1,22 @@
 [
   {
+    "name": "contact-us",
+    "path": "/contact-us",
+    "component": "/Users/drewclements/Desktop/clutch/clutch-site/pages/contact-us.vue",
+    "chunkName": "pages/contact-us",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_ad4b9162"
+  },
+  {
     "name": "all",
     "path": "/*",
     "component": "/Users/drewclements/Desktop/clutch/clutch-site/pages/_.vue",
     "chunkName": "pages/_",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
     "_name": "_0f65432b"
   }
 ]
