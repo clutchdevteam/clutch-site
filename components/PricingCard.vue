@@ -43,7 +43,7 @@
         >
 
         <div v-else class="text-center">
-          <nuxt-link class="underline" :to="$formRoute({ url: 'contact-us' })"
+          <nuxt-link class="underline" to="/contact-us"
             >Hire Us</nuxt-link
           >
         </div>
