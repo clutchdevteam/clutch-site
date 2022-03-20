@@ -1,5 +1,5 @@
 <template>
-  <section class="my-16 lg:my-48">
+  <section class="my-16 lg:my-36">
     <ClientTestimonial :testimonial="blok.testimonials[0]" />
   </section>
 </template>
