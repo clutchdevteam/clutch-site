@@ -6,7 +6,8 @@
     "chunkName": "pages/contact-us",
     "pathToRegexpOptions": {
       "strict": true
-    }
+    },
+    "_name": "_ad4b9162"
   },
   {
     "name": "subscribe",
@@ -15,7 +16,8 @@
     "chunkName": "pages/subscribe",
     "pathToRegexpOptions": {
       "strict": true
-    }
+    },
+    "_name": "_5e0dbe96"
   },
   {
     "name": "all",
@@ -24,6 +26,7 @@
     "chunkName": "pages/_",
     "pathToRegexpOptions": {
       "strict": true
-    }
+    },
+    "_name": "_0f65432b"
   }
 ]

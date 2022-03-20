@@ -17,6 +17,9 @@
   "CaseStudyTitle": {
     "description": "Auto imported from components/CaseStudyTitle.vue"
   },
+  "ClientTestimonial": {
+    "description": "Auto imported from components/ClientTestimonial.vue"
+  },
   "FancyHeading": {
     "description": "Auto imported from components/FancyHeading.vue"
   },
@@ -43,6 +46,9 @@
   },
   "OurTeam": {
     "description": "Auto imported from components/OurTeam.vue"
+  },
+  "OurTestimonials": {
+    "description": "Auto imported from components/OurTestimonials.vue"
   },
   "OurValues": {
     "description": "Auto imported from components/OurValues.vue"
