@@ -24,7 +24,7 @@
       </div>
     </div>
     <p class="text-xs text-center font-body mt-6">
-      Copyright &copy; 2022 | Clutch Creative, LLC
+      Copyright &copy; 2022 | Clutch Design &amp; Development, LLC
     </p>
   </footer>
 </template>
